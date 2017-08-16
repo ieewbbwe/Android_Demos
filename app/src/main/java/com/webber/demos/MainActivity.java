@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.webber.demos.four.FourComponentActivity;
 import com.webber.demos.primary.ReflectActivity;
 import com.webber.demos.trandfer.TransferActivity;
+import com.webber.demos.weight.CoordinatorActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
             new DemoInfo("四大组件", "Activity、Service、BroadcastReceiver、ContentProvider", FourComponentActivity.class),
             new DemoInfo("Java反射", "Java反射专题", ReflectActivity.class),
             new DemoInfo("Android 通讯", "Socket、USB、Bluetooth", TransferActivity.class),
+            new DemoInfo("CoordinatorLayout", "CoordinatorLayout处理联动", CoordinatorActivity.class),
     };
 
     @Override

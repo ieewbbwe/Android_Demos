@@ -27,6 +27,8 @@
         </activity>
         <activity android:name=".trandfer.bluetooth.BluetoothActivity">
         </activity>
+        <activity android:name=".weight.CoordinatorActivity">
+        </activity>
     </application>
 
 </manifest>
