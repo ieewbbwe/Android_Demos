@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -28,6 +29,12 @@
         <activity android:name=".trandfer.bluetooth.BluetoothActivity">
         </activity>
         <activity android:name=".weight.CoordinatorActivity">
+        </activity>
+        <activity android:name=".view.SurfaceViewActivity">
+        </activity>
+        <activity android:name=".anim.AnimActivity">
+        </activity>
+        <activity android:name=".view.camera.CameraActivity">
         </activity>
     </application>
 

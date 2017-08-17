@@ -9,9 +9,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
+import com.webber.demos.anim.AnimActivity;
 import com.webber.demos.four.FourComponentActivity;
 import com.webber.demos.primary.ReflectActivity;
 import com.webber.demos.trandfer.TransferActivity;
+import com.webber.demos.view.SurfaceViewActivity;
+import com.webber.demos.view.camera.CameraActivity;
 import com.webber.demos.weight.CoordinatorActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
             new DemoInfo("Java反射", "Java反射专题", ReflectActivity.class),
             new DemoInfo("Android 通讯", "Socket、USB、Bluetooth", TransferActivity.class),
             new DemoInfo("CoordinatorLayout", "CoordinatorLayout处理联动", CoordinatorActivity.class),
+            new DemoInfo("SurfaceView", "SurfaceView学习", SurfaceViewActivity.class),
+            new DemoInfo("动画专题", "属性动画、布局动画", AnimActivity.class),
+            new DemoInfo("相机数据实时显示", "使用SurfaceView显示相机", CameraActivity.class),
     };
 
     @Override

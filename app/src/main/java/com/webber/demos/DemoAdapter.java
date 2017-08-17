@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.Toast;
 
 /**
  * Created by mxh on 2017/8/14.
@@ -26,7 +27,13 @@ public class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.ViewHolder> {
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
+        parent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(parent.getContext(), "", Toast.LENGTH_SHORT).show();
+            }
+        });
         return new ViewHolder(LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.view_demo_item, parent, false));
     }
