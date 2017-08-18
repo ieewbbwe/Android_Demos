@@ -6,17 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.webber.demos.anim.AnimActivity">
+    tools:context="com.webber.demos.anim.FrameAnimActivity">
 
-    <Button
-        android:id="@+id/m_frame_bt"
+    <include layout="@layout/layout_control"/>
+
+    <ImageView
+        android:id="@+id/m_content_iv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="帧动画"/>
+        android:layout_marginTop="20dp"/>
 
-    <Button
-    android:id="@+id/m_tween_bt"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="补间动画"/>
 </LinearLayout>

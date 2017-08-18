@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="arr_view_anim">
+        <item>位移动画</item>
+        <item>缩放动画</item>
+        <item>旋转动画</item>
+        <item>透明动画</item>
+        <item>组合动画</item>
+    </string-array>
+</resources>
