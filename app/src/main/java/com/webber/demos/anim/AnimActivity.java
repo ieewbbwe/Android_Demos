@@ -17,6 +17,8 @@ public class AnimActivity extends AppCompatActivity {
     Button mFrameBt;
     @Bind(R.id.m_tween_bt)
     Button mTweenBt;
+    @Bind(R.id.m_property_bt)
+    Button mPropertyBt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,12 @@ public class AnimActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 pushActivity(TweenAnimActivity.class);
+            }
+        });
+        mPropertyBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pushActivity(PropertyAnimActivity.class);
             }
         });
     }

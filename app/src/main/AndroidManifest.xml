@@ -40,6 +40,8 @@
         </activity>
         <activity android:name=".anim.TweenAnimActivity">
         </activity>
+        <activity android:name=".anim.PropertyAnimActivity">
+        </activity>
     </application>
 
 </manifest>

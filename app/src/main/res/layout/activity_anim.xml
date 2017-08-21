@@ -15,8 +15,14 @@
         android:text="帧动画"/>
 
     <Button
-    android:id="@+id/m_tween_bt"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="补间动画"/>
+        android:id="@+id/m_tween_bt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="补间动画"/>
+
+    <Button
+        android:id="@+id/m_property_bt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="属性动画"/>
 </LinearLayout>

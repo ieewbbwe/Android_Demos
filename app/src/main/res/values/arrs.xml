@@ -7,4 +7,10 @@
         <item>透明动画</item>
         <item>组合动画</item>
     </string-array>
+
+    <string-array name="arr_property_anim">
+        <item>ObjectAnim</item>
+        <item>ValueAnim</item>
+    </string-array>
+
 </resources>
