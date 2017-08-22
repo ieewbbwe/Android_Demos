@@ -42,6 +42,8 @@
         </activity>
         <activity android:name=".anim.PropertyAnimActivity">
         </activity>
+        <activity android:name=".anim.NineAnimActivity">
+        </activity>
     </application>
 
 </manifest>
