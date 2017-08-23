@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.webber.demos.R;
 import com.webber.demos.trandfer.bluetooth.BluetoothActivity;
+import com.webber.demos.trandfer.socket.SocketActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -29,6 +30,12 @@ public class TransferActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(TransferActivity.this, BluetoothActivity.class));
+            }
+        });
+        mSocketBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TransferActivity.this, SocketActivity.class));
             }
         });
     }
