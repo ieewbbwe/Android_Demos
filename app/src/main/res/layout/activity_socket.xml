@@ -5,24 +5,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.webber.demos.trandfer.socket.SocketActivity">
 
-    <Button
-        android:id="@+id/m_client_bt"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="打开客户端Socket"/>
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/m_start_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开启Socket通道"/>
+
+        <Button
+            android:id="@+id/m_close_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="关闭Socket通道"/>
+
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/m_message_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/m_service_bt"
+        android:id="@+id/m_send_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="打开客户端Socket"/>
+        android:text="发送数据"/>
 
     <TextView
         android:id="@+id/m_test_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="传输数据！"/>
+        android:text="对话数据！"/>
 </LinearLayout>
