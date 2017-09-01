@@ -8,26 +8,6 @@
     android:orientation="vertical"
     tools:context="com.webber.demos.trandfer.socket.SocketActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/m_start_bt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="开启Socket通道"/>
-
-        <Button
-            android:id="@+id/m_close_bt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="关闭Socket通道"/>
-
-
-    </LinearLayout>
-
     <EditText
         android:id="@+id/m_message_et"
         android:layout_width="match_parent"

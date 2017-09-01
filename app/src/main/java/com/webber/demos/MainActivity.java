@@ -13,6 +13,7 @@ import com.webber.demos.anim.AnimActivity;
 import com.webber.demos.four.FourComponentActivity;
 import com.webber.demos.primary.ReflectActivity;
 import com.webber.demos.trandfer.TransferActivity;
+import com.webber.demos.tv.TvDemosActivity;
 import com.webber.demos.view.SurfaceViewActivity;
 import com.webber.demos.view.camera.CameraActivity;
 import com.webber.demos.weight.CoordinatorActivity;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             new DemoInfo("SurfaceView", "SurfaceView学习", SurfaceViewActivity.class),
             new DemoInfo("动画专题", "属性动画、布局动画", AnimActivity.class),
             new DemoInfo("相机数据实时显示", "使用SurfaceView显示相机", CameraActivity.class),
+            new DemoInfo("TV相关示例", "TV开发相关示例", TvDemosActivity.class),
     };
 
     @Override
