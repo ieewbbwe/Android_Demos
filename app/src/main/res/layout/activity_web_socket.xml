@@ -6,23 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.webber.demos.trandfer.TransferActivity">
+    tools:context="com.webber.demos.trandfer.socket.WebSocketActivity">
+
+    <EditText
+        android:id="@+id/m_content_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/m_bluetooth_bt"
-        android:layout_width="match_parent"
+        android:id="@+id/m_sent_bt"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="蓝牙"/>
+        android:text="发送"/>
 
-    <Button
-        android:id="@+id/m_socket_bt"
+    <TextView
+        android:id="@+id/m_content_tv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Socket"/>
-
-    <Button
-        android:id="@+id/m_web_socket_bt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="WebSocket"/>
+        android:layout_height="wrap_content"/>
 </LinearLayout>

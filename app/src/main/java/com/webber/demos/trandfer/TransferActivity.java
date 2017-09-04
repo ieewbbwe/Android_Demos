@@ -9,6 +9,7 @@ import android.widget.Button;
 import com.webber.demos.R;
 import com.webber.demos.trandfer.bluetooth.BluetoothActivity;
 import com.webber.demos.trandfer.socket.SocketActivity;
+import com.webber.demos.trandfer.socket.WebSocketActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -19,6 +20,8 @@ public class TransferActivity extends AppCompatActivity {
     Button mBluetoothBt;
     @Bind(R.id.m_socket_bt)
     Button mSocketBt;
+    @Bind(R.id.m_web_socket_bt)
+    Button mWebSocketBt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,12 @@ public class TransferActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(TransferActivity.this, SocketActivity.class));
+            }
+        });
+        mWebSocketBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TransferActivity.this, WebSocketActivity.class));
             }
         });
     }

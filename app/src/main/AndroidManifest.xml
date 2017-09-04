@@ -64,6 +64,8 @@
         </activity>
         <activity android:name=".tv.focus.TvFocusActivity">
         </activity>
+        <activity android:name=".trandfer.socket.WebSocketActivity">
+        </activity>
     </application>
 
 </manifest>
