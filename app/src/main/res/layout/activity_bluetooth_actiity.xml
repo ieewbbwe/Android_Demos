@@ -8,15 +8,37 @@
     android:orientation="vertical"
     tools:context="com.webber.demos.trandfer.bluetooth.BluetoothActivity">
 
-    <Button
-        android:id="@+id/m_open_bt"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="打开蓝牙"/>
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/m_open_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="打开蓝牙"/>
+
+        <Button
+            android:id="@+id/m_search_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="扫描设备"/>
+    </LinearLayout>
 
     <Button
-        android:id="@+id/m_search_bt"
-        android:layout_width="match_parent"
+        android:id="@+id/m_file_chose_vt"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="扫描设备"/>
+        android:text="选择文件"/>
+
+    <TextView
+        android:id="@+id/m_file_path_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/m_devices_rlv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>

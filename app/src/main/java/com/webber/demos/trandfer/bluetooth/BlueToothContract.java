@@ -13,6 +13,7 @@ public interface BlueToothContract {
 
     interface View {
 
+        void requireBlue();
     }
 
     interface Presenter {

@@ -13,15 +13,15 @@ import java.io.File;
 
 public class BlueToothPresenter implements BlueToothContract.Presenter {
 
-    private BluetoothAdapter bluetoothAdapter;
-    private BlueToothContract.View blueView;
+    private BluetoothAdapter mBluetoothAdapter;
+    private BlueToothContract.View mBlueView;
 
     public BlueToothPresenter() {
     }
 
     public BlueToothPresenter(BlueToothContract.View view) {
-        this.blueView = view;
-        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        this.mBlueView = view;
+        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
     }
 
     /**
@@ -29,8 +29,7 @@ public class BlueToothPresenter implements BlueToothContract.Presenter {
      */
     @Override
     public boolean isBluetoothOpen() {
-
-        return bluetoothAdapter != null && bluetoothAdapter.isEnabled();
+        return mBluetoothAdapter != null && mBluetoothAdapter.isEnabled();
     }
 
     /**
@@ -38,10 +37,8 @@ public class BlueToothPresenter implements BlueToothContract.Presenter {
      */
     @Override
     public void openBlueTooth() {
-        if (!bluetoothAdapter.isEnabled()) {
-           /* //弹出对话框提示用户是后打开
-            Intent enabler = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivityForResult(enabler, REQUEST_ENABLE);*/
+        if (!mBluetoothAdapter.isEnabled()) {
+            mBlueView.requireBlue();
         }
     }
 
@@ -50,7 +47,9 @@ public class BlueToothPresenter implements BlueToothContract.Presenter {
      */
     @Override
     public void searchBlueDevice() {
-
+        if (mBluetoothAdapter != null && mBluetoothAdapter.isEnabled()) {
+            mBluetoothAdapter.startDiscovery();
+        }
     }
 
     /**
