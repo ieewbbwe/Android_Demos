@@ -79,6 +79,7 @@ public class SurfaceSinView extends SurfaceView implements SurfaceHolder.Callbac
             // SurfaceView背景
             mCanvas.drawColor(Color.WHITE);
             mCanvas.drawPath(mPath, mPaint);
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
