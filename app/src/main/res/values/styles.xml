@@ -19,5 +19,36 @@
         <!-- [Monocle Tip] end -->
     </style>
 
+    <!-- Base application theme. -->
+    <style name="ToolBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <!-- <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>-->
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <!-- [Monocle Tip] start -->
+        <!-- [Monocle Tip] android's bug for dropdown with Toolbar causes the background of dropdown is unable to change by java code -->
+        <item name="android:dropDownListViewStyle">
+            @style/Widget.MonocleStyle.DropDownListViewStyle
+        </item>
+        <!-- [Monocle Tip] end -->
+        <!-- [Monocle Tip] start: for the color of back button on header -->
+        <!-- ymnc_search_button_color_dark for dark background and ymnc_search_button_color_light for light background -->
+        <item name="colorControlNormal">#26282a</item>
+        <!-- [Monocle Tip] end -->
+    </style>
 
+    <style name="Widget.MonocleStyle.DropDownListViewStyle" parent="Widget.AppCompat.ListView.DropDown">
+        <item name="android:background">#FFFFFF</item>
+    </style>
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <style name="OneEcToolBar">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="titleTextColor">@android:color/white</item>
+        <!-- ymnc_search_button_color_dark for dark background and ymnc_search_button_color_light for light background -->
+        <item name="colorControlNormal">#ffffff</item>
+        <!-- [Monocle Tip] end -->
+    </style>
 </resources>

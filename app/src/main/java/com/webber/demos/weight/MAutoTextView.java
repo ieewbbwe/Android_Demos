@@ -59,7 +59,7 @@ public class MAutoTextView extends AppCompatAutoCompleteTextView implements Menu
     private void init(Context context) {
         Method method = null;
 
-        try {
+     /*   try {
             method = this.getClass().getMethod("setDropDownAlwaysVisible", new Class[]{Boolean.TYPE});
         } catch (SecurityException var7) {
             ;
@@ -77,7 +77,7 @@ public class MAutoTextView extends AppCompatAutoCompleteTextView implements Menu
             ;
         } catch (InvocationTargetException var6) {
             ;
-        }
+        }*/
 
     }
 

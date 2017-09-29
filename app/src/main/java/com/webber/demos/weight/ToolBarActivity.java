@@ -1,5 +1,7 @@
 package com.webber.demos.weight;
 
+import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.view.MenuItemCompat;
@@ -30,6 +32,14 @@ public class ToolBarActivity extends AppCompatActivity {
     private void init() {
         mAppBar = (AppBarLayout) findViewById(R.id.appbar);
         mToolBar = (Toolbar) findViewById(R.id.toolbar);
+
+        int styleId = R.style.OneEcToolBar;
+        TypedArray array = getTheme().obtainStyledAttributes(styleId, new int[]{android.R.attr.background
+                , android.support.v7.appcompat.R.attr.titleTextColor});
+        mToolBar.setBackgroundDrawable(array.getDrawable(0));
+        mToolBar.setTitleTextColor(array.getColor(1, Color.WHITE));
+        array.recycle();
+
        /* mAutoTv = (AutoCompleteTextView) findViewById(R.id.m_auto_tv);
 
         String[] arr = {"aa", "aab", "aac"};
@@ -37,6 +47,7 @@ public class ToolBarActivity extends AppCompatActivity {
         mAutoTv.setAdapter(arrayAdapter);*/
 
         setSupportActionBar(mToolBar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override

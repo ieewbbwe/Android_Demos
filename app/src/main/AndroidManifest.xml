@@ -70,7 +70,8 @@
         </activity>
         <activity android:name=".trandfer.socket.WebSocketActivity">
         </activity>
-        <activity android:name=".weight.ToolBarActivity">
+        <activity android:name=".weight.ToolBarActivity"
+            android:theme="@style/ToolBarTheme">
         </activity>
     </application>
 
