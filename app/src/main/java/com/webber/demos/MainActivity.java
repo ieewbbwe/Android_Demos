@@ -17,6 +17,7 @@ import com.webber.demos.tv.TvDemosActivity;
 import com.webber.demos.view.SurfaceViewActivity;
 import com.webber.demos.view.camera.CameraActivity;
 import com.webber.demos.weight.CoordinatorActivity;
+import com.webber.demos.weight.ToolBarActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
             new DemoInfo("动画专题", "属性动画、布局动画", AnimActivity.class),
             new DemoInfo("相机数据实时显示", "使用SurfaceView显示相机", CameraActivity.class),
             new DemoInfo("TV相关示例", "TV开发相关示例", TvDemosActivity.class),
+            new DemoInfo("ToolBar学习", "官方推出的头部控件", ToolBarActivity.class),
     };
 
     @Override
