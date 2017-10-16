@@ -51,7 +51,7 @@ public class MAutoTextView extends AppCompatAutoCompleteTextView implements Menu
         Log.d("picher", String.format("w:%d->>h:%d->>ow:%d->>oh:%d", w, h, oldw, oldh));
         int rw = this.getRootView().getWidth();
         this.setDropDownWidth(rw);
-        this.setDropDownVerticalOffset((this.getMeasuredHeight() - this.getMeasuredHeight()) / 2);
+       // this.setDropDownVerticalOffset((this.getMeasuredHeight() - this.getMeasuredHeight()) / 2);
         Log.d("picher", "calcSize:" + ((this.getMeasuredHeight() - this.getMeasuredHeight()) / 2));
         Log.d("picher", "rw:" + rw);
     }
@@ -59,7 +59,7 @@ public class MAutoTextView extends AppCompatAutoCompleteTextView implements Menu
     private void init(Context context) {
         Method method = null;
 
-     /*   try {
+        try {
             method = this.getClass().getMethod("setDropDownAlwaysVisible", new Class[]{Boolean.TYPE});
         } catch (SecurityException var7) {
             ;
@@ -77,7 +77,7 @@ public class MAutoTextView extends AppCompatAutoCompleteTextView implements Menu
             ;
         } catch (InvocationTargetException var6) {
             ;
-        }*/
+        }
 
     }
 

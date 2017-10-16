@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.webber.demos.anim.AnimActivity;
 import com.webber.demos.four.FourComponentActivity;
 import com.webber.demos.primary.ReflectActivity;
+import com.webber.demos.sys.FlashLightActivity;
 import com.webber.demos.trandfer.TransferActivity;
 import com.webber.demos.tv.TvDemosActivity;
 import com.webber.demos.view.SurfaceViewActivity;
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
             new DemoInfo("相机数据实时显示", "使用SurfaceView显示相机", CameraActivity.class),
             new DemoInfo("TV相关示例", "TV开发相关示例", TvDemosActivity.class),
             new DemoInfo("ToolBar学习", "官方推出的头部控件", ToolBarActivity.class),
+            new DemoInfo("Fragment", "Fragment这个坑是要填一填", ToolBarActivity.class),
+            new DemoInfo("FlashLight", "闪光灯Demo",FlashLightActivity.class),
     };
 
     @Override

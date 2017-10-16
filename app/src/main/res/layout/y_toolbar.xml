@@ -2,6 +2,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
-    android:layout_height="130dp"
+    android:layout_height="?attr/actionBarSize"
     app:theme="@style/MyToolBar"
     app:layout_scrollFlags="scroll|enterAlways|snap"/>
