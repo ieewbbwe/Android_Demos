@@ -54,7 +54,7 @@ public class FlushLightReceiver extends BroadcastReceiver {
         /**
          * 手机处于锁屏状态时， LED灯就会不停地闪烁， 提醒用户去查看手机,下面是绿色的灯光一 闪一闪的效果
          */
-        notification.ledARGB = Color.GREEN;// 控制 LED 灯的颜色，一般有红绿蓝三种颜色可选
+        notification.ledARGB = Color.BLUE;// 控制 LED 灯的颜色，一般有红绿蓝三种颜色可选
         notification.ledOnMS = 1000;// 指定 LED 灯亮起的时长，以毫秒为单位
         notification.ledOffMS = 1000;// 指定 LED 灯暗去的时长，也是以毫秒为单位
         notification.flags = Notification.FLAG_SHOW_LIGHTS;// 指定通知的一些行为，其中就包括显示
