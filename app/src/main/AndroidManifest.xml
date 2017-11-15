@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.webber.demos"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.webber.demos">
 
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--
+        <uses-permission android:name="android.permission.FLSHLIGHT" />
+    -->
 
     <!-- 网络相关权限 -->
     <!-- 允许应用程序改变网络状态 -->
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <!-- 允许应用程序改变WIFI连接状态 -->
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <!-- 允许应用程序访问有关的网络信息 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <!-- 允许应用程序访问WIFI网卡的网络信息 -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!-- 允许应用程序完全使用网络 -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- 蓝牙相关权限 -->
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
 
     <application
         android:allowBackup="true"
@@ -31,48 +34,54 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".primary.ReflectActivity">
-        </activity>
-        <activity android:name=".four.FourComponentActivity">
-        </activity>
-        <activity android:name=".trandfer.TransferActivity">
-        </activity>
-        <activity android:name=".trandfer.bluetooth.BluetoothActivity">
-        </activity>
-        <activity android:name=".weight.CoordinatorActivity">
-        </activity>
-        <activity android:name=".view.SurfaceViewActivity">
-        </activity>
-        <activity android:name=".anim.AnimActivity">
-        </activity>
-        <activity android:name=".view.camera.CameraActivity">
-        </activity>
-        <activity android:name=".anim.FrameAnimActivity">
-        </activity>
-        <activity android:name=".anim.TweenAnimActivity">
-        </activity>
-        <activity android:name=".anim.PropertyAnimActivity">
-        </activity>
-        <activity android:name=".anim.NineAnimActivity">
-        </activity>
-        <activity android:name=".trandfer.socket.SocketActivity">
-        </activity>
+        <activity android:name=".primary.ReflectActivity" />
+        <activity android:name=".four.FourComponentActivity" />
+        <activity android:name=".trandfer.TransferActivity" />
+        <activity android:name=".trandfer.bluetooth.BluetoothActivity" />
+        <activity android:name=".weight.CoordinatorActivity" />
+        <activity android:name=".view.SurfaceViewActivity" />
+        <activity android:name=".anim.AnimActivity" />
+        <activity android:name=".view.camera.CameraActivity" />
+        <activity android:name=".anim.FrameAnimActivity" />
+        <activity android:name=".anim.TweenAnimActivity" />
+        <activity android:name=".anim.PropertyAnimActivity" />
+        <activity android:name=".anim.NineAnimActivity" />
+        <activity android:name=".trandfer.socket.SocketActivity" />
         <activity
             android:name=".tv.TvDemosActivity"
-            android:screenOrientation="landscape">
-        </activity>
-        <activity android:name=".tv.focus.TvFocusActivity">
-        </activity>
-        <activity android:name=".trandfer.socket.WebSocketActivity">
-        </activity>
-        <activity android:name=".weight.ToolBarActivity"
-            android:theme="@style/ToolBarTheme">
-        </activity>
+            android:screenOrientation="landscape" />
+        <activity android:name=".tv.focus.TvFocusActivity" />
+        <activity android:name=".trandfer.socket.WebSocketActivity" />
+        <activity
+            android:name=".weight.ToolBarActivity"
+            android:theme="@style/ToolBarTheme" />
+        <activity
+            android:name=".sys.FlashLightActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_flash_light"
+            android:theme="@style/FullscreenTheme" />
+
+        <receiver android:name=".sys.FlushLightReceiver">
+            <intent-filter>
+                <action android:name="com.webber.demos.sys.flushLight" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.webber.demos.four.GMCPushReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <action android:name="com.webber.test" />
+
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

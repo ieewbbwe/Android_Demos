@@ -6,7 +6,6 @@
     android:layout_centerVertical="true"
     android:layout_marginRight="16sp"
     android:background="#0094ff"
-    android:dropDownVerticalOffset="10dp"
     android:ellipsize="end"
     android:focusableInTouchMode="true"
     android:imeOptions="actionSearch"

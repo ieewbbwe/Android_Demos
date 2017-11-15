@@ -1,4 +1,5 @@
 <resources>
+
     <string name="label_name">名称</string>
     <string name="label_price">单价</string>
     <string name="label_number">数量</string>
@@ -8,4 +9,9 @@
     <string name="label_sale_men">销售员</string>
     <string name="label_order_code">单号</string>
     <string name="app_name">PicherDemo</string>
+
+    <string name="title_activity_flash_light">FlashLightActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="text">服務預設自動續訂，詳情請致電客戶服務熱線0809 012 555查詢或以電郵cs@appledaily.com.tw聯絡我們。</string>
 </resources>

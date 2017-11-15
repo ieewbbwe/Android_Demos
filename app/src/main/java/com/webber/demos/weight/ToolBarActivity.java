@@ -26,9 +26,9 @@ public class ToolBarActivity extends AppCompatActivity {
 
     private AppBarLayout mAppBar;
     private Toolbar mToolBar;
-    private AutoCompleteTextView mAutoTv;
     private ArrayAdapter<String> arrayAdapter;
-    private EditText mBorderEt;
+    private MAutoTextView mAutoTv;
+    private MenuItem mSearchMe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,12 +71,21 @@ public class ToolBarActivity extends AppCompatActivity {
     }
 
     private void setSupportMenu(Menu menu) {
-        MenuItem mSearchMe = menu.findItem(R.id.menu_search);
-        MAutoTextView mAutoTv = (MAutoTextView) mSearchMe.getActionView();
+        mSearchMe = menu.findItem(R.id.menu_search);
+        mAutoTv = (MAutoTextView) mSearchMe.getActionView();
 
         mSearchMe.expandActionView();
 
         MenuItemCompat.setOnActionExpandListener(mSearchMe, mAutoTv);
+
+        mAutoTv.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    mSearchMe.collapseActionView();
+                }
+            }
+        });
     }
 
     public void setTextBorder(){
