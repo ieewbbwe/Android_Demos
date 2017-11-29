@@ -10,7 +10,9 @@ import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.webber.demos.anim.AnimActivity;
+import com.webber.demos.customerview.CustomerViewActivity;
 import com.webber.demos.four.FourComponentActivity;
+import com.webber.demos.mvvm.DataBindingActivity;
 import com.webber.demos.primary.ReflectActivity;
 import com.webber.demos.sys.FlashLightActivity;
 import com.webber.demos.trandfer.TransferActivity;
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
             new DemoInfo("ToolBar学习", "官方推出的头部控件", ToolBarActivity.class),
             new DemoInfo("Fragment", "Fragment这个坑是要填一填", ToolBarActivity.class),
             new DemoInfo("FlashLight", "闪光灯Demo",FlashLightActivity.class),
+            new DemoInfo("自定义控件", "CustomerView",CustomerViewActivity.class),
+            new DemoInfo("MVVM", "使用DataBinding",DataBindingActivity.class),
     };
 
     @Override

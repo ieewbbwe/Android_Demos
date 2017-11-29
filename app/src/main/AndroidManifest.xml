@@ -5,9 +5,8 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <!--
-        <uses-permission android:name="android.permission.FLSHLIGHT" />
-    -->
+    <!-- <uses-permission android:name="android.permission.FLSHLIGHT" /> -->
+
 
     <!-- 网络相关权限 -->
     <!-- 允许应用程序改变网络状态 -->
@@ -72,7 +71,7 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.webber.demos.four.GMCPushReceiver"
+            android:name=".four.GMCPushReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
@@ -82,6 +81,9 @@
                 <category android:name="${applicationId}" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".customerview.CustomerViewActivity" />
+        <activity android:name=".mvvm.DataBindingActivity"></activity>
     </application>
 
 </manifest>
