@@ -38,16 +38,16 @@ public class BaseFragment extends Fragment {
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        Log.d("picher", getClass().getSimpleName() + "------->>onActivityCreated");
-    }
-
-    @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         Log.d("picher", getClass().getSimpleName() + "------->>onViewCreated");
 
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        Log.d("picher", getClass().getSimpleName() + "------->>onActivityCreated");
     }
 
     @Override

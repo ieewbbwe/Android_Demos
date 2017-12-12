@@ -4,12 +4,16 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.webber.demos.R;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by picher on 2017/12/12.
@@ -18,28 +22,44 @@ import com.webber.demos.R;
 
 public class ListFragment extends BaseFragment {
 
-    private RecyclerView mListContentRlv;
     private int size = 50;
     private String[] data = new String[size];
+
+    int currentPos = 0;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_list_layout, container, false);
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                currentPos++;
+                Log.d("picher",""+currentPos);
+            }
+        },10000);
         return v;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mListContentRlv = (RecyclerView) view.findViewById(R.id.m_list_content_rlv);
+        RecyclerView mListContentRlv = (RecyclerView) view.findViewById(R.id.m_list_content_rlv);
         mListContentRlv.setLayoutManager(new LinearLayoutManager(getContext()));
         ListAdapter listAdapter = new ListAdapter();
         mListContentRlv.setAdapter(listAdapter);
-        for (int i = 0; i < size; i++) {
-            data[i] = "我是数据小 " + i + "";
+        if(currentPos == 0){
+            for (int i = 0; i < size; i++) {
+                data[i] = "我是数据小 " + i + "";
+            }
+        }else{
+            for (int i = 0; i < size; i++) {
+                data[i] = "我改变啦！！ " + i + "";
+            }
         }
+
         listAdapter.setData(data);
+
     }
 
     public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
@@ -47,6 +67,7 @@ public class ListFragment extends BaseFragment {
         private String[] strs;
 
         public void setData(String[] data) {
+            Log.d("picher","设置数据");
             this.strs = data;
         }
 
