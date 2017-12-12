@@ -2,6 +2,7 @@ package com.webber.demos;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import com.webber.demos.anim.AnimActivity;
 import com.webber.demos.customerview.CustomerViewActivity;
 import com.webber.demos.four.FourComponentActivity;
+import com.webber.demos.fragmentdemo.FragmentDemoActivity;
 import com.webber.demos.mvvm.DataBindingActivity;
 import com.webber.demos.primary.ReflectActivity;
 import com.webber.demos.sys.FlashLightActivity;
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mContentRlv;
     private DemoInfo[] DEMOS = {
             new DemoInfo("四大组件", "Activity、Service、BroadcastReceiver、ContentProvider", FourComponentActivity.class),
+            new DemoInfo("Fragment", "Fragment 生命周期，replace、add", FragmentDemoActivity.class),
             new DemoInfo("Java反射", "Java反射专题", ReflectActivity.class),
             new DemoInfo("Android 通讯", "Socket、USB、Bluetooth", TransferActivity.class),
             new DemoInfo("CoordinatorLayout", "CoordinatorLayout处理联动", CoordinatorActivity.class),

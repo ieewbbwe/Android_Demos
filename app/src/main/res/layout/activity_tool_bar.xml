@@ -13,6 +13,14 @@
         android:background="@android:color/transparent">
 
         <include layout="@layout/y_toolbar"/>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/m_tab_l"
+            app:tabGravity = "fill"
+            app:tabMode = "fixed"
+            app:tabMaxWidth = "0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </android.support.design.widget.AppBarLayout>
 
     <FrameLayout

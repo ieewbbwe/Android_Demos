@@ -83,7 +83,8 @@
         </receiver>
 
         <activity android:name=".customerview.CustomerViewActivity" />
-        <activity android:name=".mvvm.DataBindingActivity"></activity>
+        <activity android:name=".mvvm.DataBindingActivity" />
+        <activity android:name=".fragmentdemo.FragmentDemoActivity"></activity>
     </application>
 
 </manifest>

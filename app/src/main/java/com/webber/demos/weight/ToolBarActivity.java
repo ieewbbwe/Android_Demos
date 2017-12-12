@@ -7,6 +7,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -29,6 +30,7 @@ public class ToolBarActivity extends AppCompatActivity {
     private ArrayAdapter<String> arrayAdapter;
     private MAutoTextView mAutoTv;
     private MenuItem mSearchMe;
+    private TabLayout mTabL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +43,11 @@ public class ToolBarActivity extends AppCompatActivity {
     private void init() {
         mAppBar = (AppBarLayout) findViewById(R.id.appbar);
         mToolBar = (Toolbar) findViewById(R.id.toolbar);
-        mBorderEt = (EditText) findViewById(R.id.edtEmail);
+        //mBorderEt = (EditText) findViewById(R.id.edtEmail);
+        mTabL = (TabLayout) findViewById(R.id.m_tab_l);
+
+        mTabL.addTab(mTabL.newTab().setText("11"));
+        mTabL.addTab(mTabL.newTab().setText("222"));
 
         int styleId = R.style.OneEcToolBar;
         TypedArray array = getTheme().obtainStyledAttributes(styleId, new int[]{android.R.attr.background
@@ -93,7 +99,7 @@ public class ToolBarActivity extends AppCompatActivity {
                 R.drawable.rounded_edittext);
         drawable.setStroke((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                 getResources().getDimension(R.dimen.edittext_border_width),getResources().getDisplayMetrics()), Color.parseColor("#0094ff"));
-        setViewBackground(mBorderEt, drawable);
+       // setViewBackground(mBorderEt, drawable);
     }
 
     private static void setViewBackground(View view, Drawable background) {
