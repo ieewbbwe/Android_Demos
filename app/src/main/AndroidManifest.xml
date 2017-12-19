@@ -84,7 +84,8 @@
 
         <activity android:name=".customerview.CustomerViewActivity" />
         <activity android:name=".mvvm.DataBindingActivity" />
-        <activity android:name=".fragmentdemo.FragmentDemoActivity"></activity>
+        <activity android:name=".fragmentdemo.FragmentDemoActivity" />
+        <activity android:name=".notify.NotificationActivity"></activity>
     </application>
 
 </manifest>

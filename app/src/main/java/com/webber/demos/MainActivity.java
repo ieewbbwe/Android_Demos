@@ -15,6 +15,7 @@ import com.webber.demos.customerview.CustomerViewActivity;
 import com.webber.demos.four.FourComponentActivity;
 import com.webber.demos.fragmentdemo.FragmentDemoActivity;
 import com.webber.demos.mvvm.DataBindingActivity;
+import com.webber.demos.notify.NotificationActivity;
 import com.webber.demos.primary.ReflectActivity;
 import com.webber.demos.sys.FlashLightActivity;
 import com.webber.demos.trandfer.TransferActivity;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
             new DemoInfo("FlashLight", "闪光灯Demo",FlashLightActivity.class),
             new DemoInfo("自定义控件", "CustomerView",CustomerViewActivity.class),
             new DemoInfo("MVVM", "使用DataBinding",DataBindingActivity.class),
+            new DemoInfo("Notify", "通知",NotificationActivity.class),
     };
 
     @Override

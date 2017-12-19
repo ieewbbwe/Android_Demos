@@ -105,4 +105,11 @@ public class BaseFragment extends Fragment {
         Log.d("picher", getClass().getSimpleName() + "------->>onDetach");
 
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.d("picher", getClass().getSimpleName() + "------->>onSaveInstanceState");
+    }
+
 }
