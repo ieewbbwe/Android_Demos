@@ -21,8 +21,10 @@ import com.webber.demos.sys.FlashLightActivity;
 import com.webber.demos.trandfer.TransferActivity;
 import com.webber.demos.tv.TvDemosActivity;
 import com.webber.demos.view.SurfaceViewActivity;
+import com.webber.demos.view.WebViewActivity;
 import com.webber.demos.view.camera.CameraActivity;
 import com.webber.demos.weight.CoordinatorActivity;
+import com.webber.demos.weight.SpannableActivity;
 import com.webber.demos.weight.ToolBarActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private DemoInfo[] DEMOS = {
             new DemoInfo("四大组件", "Activity、Service、BroadcastReceiver、ContentProvider", FourComponentActivity.class),
             new DemoInfo("Fragment", "Fragment 生命周期，replace、add", FragmentDemoActivity.class),
+            new DemoInfo("加载网页", "使用WebView加载", WebViewActivity.class),
             new DemoInfo("Java反射", "Java反射专题", ReflectActivity.class),
             new DemoInfo("Android 通讯", "Socket、USB、Bluetooth", TransferActivity.class),
             new DemoInfo("CoordinatorLayout", "CoordinatorLayout处理联动", CoordinatorActivity.class),
@@ -43,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
             new DemoInfo("FlashLight", "闪光灯Demo",FlashLightActivity.class),
             new DemoInfo("自定义控件", "CustomerView",CustomerViewActivity.class),
             new DemoInfo("MVVM", "使用DataBinding",DataBindingActivity.class),
-            new DemoInfo("Notify", "通知",NotificationActivity.class),
+            new DemoInfo("通知相关Demo", "Notify",NotificationActivity.class),
+            new DemoInfo("富文本", "富文本练习",SpannableActivity.class),
     };
 
     @Override

@@ -85,7 +85,10 @@
         <activity android:name=".customerview.CustomerViewActivity" />
         <activity android:name=".mvvm.DataBindingActivity" />
         <activity android:name=".fragmentdemo.FragmentDemoActivity" />
-        <activity android:name=".notify.NotificationActivity"></activity>
+        <activity android:name=".notify.NotificationActivity" />
+        <activity android:name=".weight.SpannableActivity" />
+        <activity android:name=".nitification.NotificationActivity" />
+        <activity android:name=".view.WebViewActivity"></activity>
     </application>
 
 </manifest>

@@ -14,4 +14,20 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="text">服務預設自動續訂，詳情請致電客戶服務熱線+852 1512 9985查詢或以電郵cs@appledaily.com.tw聯絡我們。</string>
+
+    <string name="payment_issue_tel_email">服務預設自動續訂，詳情參閱%1$s、致電%2$s，或%3$s聯絡我們。</string>
+    <string name="payment_common_problem">常見問題</string>
+    <string name="payment_service_tel">0809 012 555</string>
+    <string name="payment_email">電郵</string>
+    <string name="payment_all">服務預設自動續訂，詳情參閱常見問題、致電0809 012 555，或電郵聯絡我們。</string>
+
+    <string name="payment_text1">服務預設自動續訂，詳情參閱</string>
+    <string name="payment_text2">常見問題</string>
+    <string name="payment_text3">、致電</string>
+    <string name="payment_text4">0809 012 555</string>
+    <string name="payment_text5">，或</string>
+    <string name="payment_text6">電郵</string>
+    <string name="payment_text7">聯絡我們。</string>
+
+
 </resources>
