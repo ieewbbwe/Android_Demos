@@ -24,6 +24,7 @@ import com.webber.demos.view.SurfaceViewActivity;
 import com.webber.demos.view.WebViewActivity;
 import com.webber.demos.view.camera.CameraActivity;
 import com.webber.demos.weight.CoordinatorActivity;
+import com.webber.demos.weight.RecyclerViewActivity;
 import com.webber.demos.weight.SpannableActivity;
 import com.webber.demos.weight.ToolBarActivity;
 
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private DemoInfo[] DEMOS = {
             new DemoInfo("四大组件", "Activity、Service、BroadcastReceiver、ContentProvider", FourComponentActivity.class),
             new DemoInfo("Fragment", "Fragment 生命周期，replace、add", FragmentDemoActivity.class),
+            new DemoInfo("列表相关", "RecycleView的坑", RecyclerViewActivity.class),
             new DemoInfo("加载网页", "使用WebView加载", WebViewActivity.class),
             new DemoInfo("Java反射", "Java反射专题", ReflectActivity.class),
             new DemoInfo("Android 通讯", "Socket、USB、Bluetooth", TransferActivity.class),

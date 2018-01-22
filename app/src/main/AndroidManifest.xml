@@ -88,7 +88,8 @@
         <activity android:name=".notify.NotificationActivity" />
         <activity android:name=".weight.SpannableActivity" />
         <activity android:name=".nitification.NotificationActivity" />
-        <activity android:name=".view.WebViewActivity"></activity>
+        <activity android:name=".view.WebViewActivity" />
+        <activity android:name=".weight.RecyclerViewActivity"></activity>
     </application>
 
 </manifest>

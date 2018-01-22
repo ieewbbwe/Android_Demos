@@ -1,6 +1,7 @@
 package com.webber.demos.fragmentdemo;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -18,6 +19,7 @@ public class FragmentDemoActivity extends AppCompatActivity {
     private FrameLayout mContainer;
     private Button mAddFragmentBt;
     int click = 0;
+    private FragmentManager manager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +45,8 @@ public class FragmentDemoActivity extends AppCompatActivity {
 
     }
 
-    private void switchFragment(Fragment fragment) {
-        FragmentManager manager = getSupportFragmentManager();
+    private void switchFragment(final Fragment fragment) {
+        manager = getSupportFragmentManager();
         Fragment findFragment = manager.findFragmentByTag(fragment.getClass().getSimpleName());
         if (findFragment != null) {
             Log.d("picher", "根据TAG找到Fragment：" + findFragment.getClass().getSimpleName());
@@ -53,7 +55,7 @@ public class FragmentDemoActivity extends AppCompatActivity {
         FragmentTransaction transaction = manager.beginTransaction();
 
         transaction.addToBackStack(fragment.getClass().getSimpleName());
-        transaction.replace(R.id.m_fragment_container_fl, fragment, fragment.getClass().getSimpleName());
+        transaction.add(R.id.m_fragment_container_fl, fragment, fragment.getClass().getSimpleName());
         transaction.commit();
 
         manager.addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
@@ -68,20 +70,20 @@ public class FragmentDemoActivity extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        Log.d("picher", "keyCode:" + keyCode + "  KeyEvent:" + event.getAction());
+        //Log.d("picher", "keyCode:" + keyCode + "  KeyEvent:" + event.getAction());
         switch (event.getAction()) {
             case KeyEvent.ACTION_DOWN:
 
                 if (keyCode == KeyEvent.KEYCODE_BACK) {
                     if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
-                        Log.d("picher", "stackCount:" + getSupportFragmentManager().getBackStackEntryCount() + "fragments:" + getSupportFragmentManager().getFragments().size());
+                        //Log.d("picher", "stackCount:" + getSupportFragmentManager().getBackStackEntryCount() + "fragments:" + getSupportFragmentManager().getFragments().size());
 
                         for (int i = 0; i < getSupportFragmentManager().getBackStackEntryCount(); i++) {
-                            Log.d("picher", "backStackName:" + getSupportFragmentManager().getBackStackEntryAt(i).getName());
+                          //  Log.d("picher", "backStackName:" + getSupportFragmentManager().getBackStackEntryAt(i).getName());
                         }
                         getSupportFragmentManager().popBackStackImmediate();
                         for (int i = 0; i < getSupportFragmentManager().getBackStackEntryCount(); i++) {
-                            Log.d("picher", "弹栈之后backStackName:" + getSupportFragmentManager().getBackStackEntryAt(i).getName());
+                            //Log.d("picher", "弹栈之后backStackName:" + getSupportFragmentManager().getBackStackEntryAt(i).getName());
                         }
                         return true;
                     }

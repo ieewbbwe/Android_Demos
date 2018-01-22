@@ -62,7 +62,7 @@ public class ListFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Log.d("picher",savedInstanceState!=null?savedInstanceState.getString("position",""):"null");
+        //Log.d("picher",savedInstanceState!=null?savedInstanceState.getString("position",""):"null");
 
         mListContentRlv = (RecyclerView) view.findViewById(R.id.m_list_content_rlv);
         mListContentRlv.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -76,7 +76,7 @@ public class ListFragment extends BaseFragment {
             data.add("我是数据小 " + i + "");
             change.add("我改变啦！！ " + i + "");
         }
-        Log.d("picher", "设置数据 " + view.hashCode());
+        //Log.d("picher", "设置数据 " + view.hashCode());
         if (currentPos == 0) {
             listAdapter.setData(data);
         } else {
@@ -144,7 +144,7 @@ public class ListFragment extends BaseFragment {
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             if(holder instanceof ViewHolder){
                 ((ViewHolder) holder).tv.setText(strs.get(position));
-                Log.d("pihcer", "绑定位置：" + position);
+                //Log.d("pihcer", "绑定位置：" + position);
             }else if(holder instanceof HeaderFooterViewHolder){
                 ((HeaderFooterViewHolder) holder).base.addView(mFooters.get(0));
                 if(loadMoreListener != null){
