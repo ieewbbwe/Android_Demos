@@ -21,6 +21,7 @@ public class RecycleViewTestAdapter extends RecyclerView.Adapter {
 
     private static final int TYPE_NORMAL = 0;
     private static final int TYPE_LASTER = 1;
+    private OnItemClickListener onItemClickListener;
 
     public void setData(List<String> data) {
         this.strings = data;
@@ -28,17 +29,34 @@ public class RecycleViewTestAdapter extends RecyclerView.Adapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if(viewType == TYPE_LASTER){
+       /* if(viewType == TYPE_LASTER){
             return new LastViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty,parent,false));
-        }
+        }*/
         return new NormalViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_big_img,parent,false));
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(onItemClickListener != null){
+                    onItemClickListener.onItemClick(v,position);
+                }
+            }
+        });
+
         if(holder instanceof NormalViewHolder){
             ((NormalViewHolder) holder).textView.setText(strings.get(position));
         }
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener){
+        this.onItemClickListener = onItemClickListener;
+    }
+
+    public interface OnItemClickListener{
+        void onItemClick(View v,int postion);
     }
 
     @Override

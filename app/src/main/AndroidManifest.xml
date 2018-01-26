@@ -89,7 +89,14 @@
         <activity android:name=".weight.SpannableActivity" />
         <activity android:name=".nitification.NotificationActivity" />
         <activity android:name=".view.WebViewActivity" />
-        <activity android:name=".weight.RecyclerViewActivity"></activity>
+        <activity android:name=".weight.RecyclerViewActivity" />
+        <activity android:name=".annotation.AnnotationActivity" />
+        <activity
+            android:name=".four.Test1Activity"
+            android:launchMode="singleTask" />
+        <activity android:name=".four.Test2Activity" />
+        <activity android:name=".four.Test3Activity" />
+        <activity android:name=".update.VersionUpdateActivity"></activity>
     </application>
 
 </manifest>

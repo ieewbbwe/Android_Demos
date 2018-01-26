@@ -3,6 +3,7 @@ package com.webber.demos.mvvm;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import android.util.Log;
+import android.view.View;
 
 import com.webber.demos.BR;
 
@@ -42,11 +43,11 @@ public class User extends BaseObservable {
         notifyPropertyChanged(BR.age);
     }
 
-    public void setData(){
+    public void setData(View v){
         setName("change");
     }
 
-    public void print(){
+    public void print(View v){
         Log.d("picher",String.format("name:%s-->> age:%s",name,age));
     }
 }

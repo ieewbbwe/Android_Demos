@@ -38,8 +38,7 @@
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_scrollFlags="scroll|snap|enterAlways" />
+                android:layout_height="?attr/actionBarSize" />
         <!--app:layout_collapseMode="pin"-->
        <!-- </android.support.design.widget.CollapsingToolbarLayout>-->
     </android.support.design.widget.AppBarLayout>
@@ -51,14 +50,20 @@
         android:background="#0094ff"/>
 
     <FrameLayout
+        android:id="@+id/m_container_fl"
         app:layout_behavior="com.webber.demos.weight.FixScrollingFooterBehavior"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <WebView
-            android:id="@+id/m_test_wv"
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent">
+
+            <WebView
+                android:id="@+id/m_test_wv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </android.support.v4.widget.NestedScrollView>
     </FrameLayout>
 
     <!--<android.support.v4.widget.NestedScrollView
