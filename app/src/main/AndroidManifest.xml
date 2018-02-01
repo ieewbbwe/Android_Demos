@@ -88,7 +88,7 @@
         <activity android:name=".notify.NotificationActivity" />
         <activity android:name=".weight.SpannableActivity" />
         <activity android:name=".nitification.NotificationActivity" />
-        <activity android:name=".view.WebViewActivity" />
+        <activity android:name=".view.WebViewActivity" android:hardwareAccelerated="true"/>
         <activity android:name=".weight.RecyclerViewActivity" />
         <activity android:name=".annotation.AnnotationActivity" />
         <activity
@@ -97,6 +97,12 @@
         <activity android:name=".four.Test2Activity" />
         <activity android:name=".four.Test3Activity" />
         <activity android:name=".update.VersionUpdateActivity"></activity>
+
+        <receiver android:name="com.webber.demos.four.BrodCastTest">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

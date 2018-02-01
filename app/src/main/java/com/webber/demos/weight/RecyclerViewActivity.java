@@ -24,7 +24,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recycler_view);
         recyclerView = (RecyclerView) findViewById(R.id.m_test_rv);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         testAdapter = new RecycleViewTestAdapter();
         recyclerView.setAdapter(testAdapter);
 
@@ -68,6 +68,8 @@ public class RecyclerViewActivity extends AppCompatActivity {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
+                Log.d("picher", "canScroll（1）:" + recyclerView.canScrollVertically(1) +
+                        "-->>canScroll(-1) :" + recyclerView.canScrollVertically(-1));
                /* //1. lastVisible 判断
                 Log.d("picher", "最后一可见位:" + ((LinearLayoutManager) recyclerView.getLayoutManager()).findLastVisibleItemPosition());
                 //2. scrollRange 判断

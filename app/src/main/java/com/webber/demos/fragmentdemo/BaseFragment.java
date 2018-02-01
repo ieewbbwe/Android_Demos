@@ -112,4 +112,9 @@ public class BaseFragment extends Fragment {
         Log.d("picher", getClass().getSimpleName() + "------->>onSaveInstanceState");
     }
 
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        Log.d("picher", getClass().getSimpleName() + "------->>setUserVisibleHint:" + isVisibleToUser);
+    }
 }

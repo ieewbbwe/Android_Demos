@@ -146,6 +146,7 @@ public class ListFragment extends BaseFragment {
                 ((ViewHolder) holder).tv.setText(strs.get(position));
                 //Log.d("pihcer", "绑定位置：" + position);
             }else if(holder instanceof HeaderFooterViewHolder){
+                ((ViewGroup) mFooters.get(0).getParent()).removeView(mFooters.get(0));
                 ((HeaderFooterViewHolder) holder).base.addView(mFooters.get(0));
                 if(loadMoreListener != null){
                     loadMoreListener.onLoadMore(position);
