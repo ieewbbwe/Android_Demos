@@ -1,5 +1,6 @@
 package com.webber.demos.fragmentdemo;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -17,6 +18,15 @@ import android.view.ViewGroup;
  */
 
 public class BaseFragment extends Fragment {
+    public String title;
+
+    public BaseFragment() {
+    }
+
+    @SuppressLint("ValidFragment")
+    public BaseFragment(String title) {
+        this.title = title;
+    }
 
     @Override
     public void onAttach(Context context) {

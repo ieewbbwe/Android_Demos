@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.webber.demos.anim.AnimActivity;
 import com.webber.demos.annotation.AnnotationActivity;
 import com.webber.demos.customerview.CustomerViewActivity;
+import com.webber.demos.database.GreenDaoActivity;
 import com.webber.demos.four.FourComponentActivity;
 import com.webber.demos.fragmentdemo.FragmentDemoActivity;
 import com.webber.demos.mvvm.DataBindingActivity;
@@ -24,8 +25,10 @@ import com.webber.demos.trandfer.TransferActivity;
 import com.webber.demos.tv.TvDemosActivity;
 import com.webber.demos.update.VersionUpdateActivity;
 import com.webber.demos.view.SurfaceViewActivity;
+import com.webber.demos.view.ViewPagerDemoActivity;
 import com.webber.demos.view.WebViewActivity;
 import com.webber.demos.view.camera.CameraActivity;
+import com.webber.demos.weight.BottomSheetActivity;
 import com.webber.demos.weight.CoordinatorActivity;
 import com.webber.demos.weight.RecyclerViewActivity;
 import com.webber.demos.weight.SpannableActivity;
@@ -37,8 +40,11 @@ public class MainActivity extends AppCompatActivity {
     private DemoInfo[] DEMOS = {
             new DemoInfo("四大组件", "Activity、Service、BroadcastReceiver、ContentProvider", FourComponentActivity.class),
             new DemoInfo("Fragment", "Fragment 生命周期，replace、add", FragmentDemoActivity.class),
+            new DemoInfo("数据库相关GreenDao", "GreenDao的增删改查", GreenDaoActivity.class),
             new DemoInfo("版本升级更新", "8.0版本升级", VersionUpdateActivity.class),
+            new DemoInfo("BottomSheet底部弹出框", "BottomSheet", BottomSheetActivity.class),
             new DemoInfo("列表相关", "RecycleView的坑", RecyclerViewActivity.class),
+            new DemoInfo("ViewPager", "ViewPager的例子", ViewPagerDemoActivity.class),
             new DemoInfo("加载网页", "使用WebView加载", WebViewActivity.class),
             new DemoInfo("Java反射", "Java反射专题", ReflectActivity.class),
             new DemoInfo("注解", "Annotation練習",AnnotationActivity.class),

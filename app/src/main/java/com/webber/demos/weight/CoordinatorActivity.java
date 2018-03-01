@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -22,15 +23,20 @@ import static android.support.design.widget.AppBarLayout.LayoutParams.SCROLL_FLA
 
 public class CoordinatorActivity extends AppCompatActivity {
 
+    private CoordinatorLayout coordinatorLayout;
+    private Toolbar toolbar;
+    private AppBarLayout appbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coordinator);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        appbar = findViewById(R.id.tool);
         setSupportActionBar(toolbar);
 
         FrameLayout fragment = (FrameLayout) findViewById(R.id.m_container_fl);
-        ActionBar actionBar = getSupportActionBar();
+        final ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setDisplayShowHomeEnabled(true);
@@ -52,5 +58,19 @@ public class CoordinatorActivity extends AppCompatActivity {
 
         //mTestWv.loadUrl("https://www.baidu.com/");
         mTestWv.loadUrl("https://hk.appledaily.com/livestream/channel/legco/?&mobile=1");
+
+        coordinatorLayout = findViewById(R.id.m_root_cdl);
+        appbar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                Log.d("picher",""+verticalOffset);
+            }
+        });
+        findViewById(R.id.m_expend_bt).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                appbar.setExpanded(false);
+            }
+        });
     }
 }

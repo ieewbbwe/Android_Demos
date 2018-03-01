@@ -18,9 +18,9 @@ import java.util.List;
 public class RecycleViewTestAdapter extends RecyclerView.Adapter {
 
     private List<String> strings;
-
     private static final int TYPE_NORMAL = 0;
     private static final int TYPE_LASTER = 1;
+    private static final int TYPE_BIGIMG = 2;
     private OnItemClickListener onItemClickListener;
 
     public void setData(List<String> data) {
@@ -32,7 +32,10 @@ public class RecycleViewTestAdapter extends RecyclerView.Adapter {
        /* if(viewType == TYPE_LASTER){
             return new LastViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty,parent,false));
         }*/
-        return new NormalViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_big_img,parent,false));
+       if(viewType == TYPE_BIGIMG){
+            return new NormalViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_big_img,parent,false));
+       }
+        return new NormalViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_normal_img,parent,false));
     }
 
     @Override
@@ -61,8 +64,11 @@ public class RecycleViewTestAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemViewType(int position) {
+        String str = strings.get(position);
         if(position == strings.size() -1){
             return TYPE_LASTER;
+        }else if(str.contains("强势插入")){
+            return TYPE_BIGIMG;
         }
         return TYPE_NORMAL;
     }

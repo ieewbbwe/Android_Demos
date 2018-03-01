@@ -55,7 +55,7 @@ public class FragmentDemoActivity extends AppCompatActivity {
         FragmentTransaction transaction = manager.beginTransaction();
 
         transaction.addToBackStack(fragment.getClass().getSimpleName());
-        transaction.add(R.id.m_fragment_container_fl, fragment, fragment.getClass().getSimpleName());
+        transaction.replace(R.id.m_fragment_container_fl, fragment, fragment.getClass().getSimpleName());
         transaction.commit();
 
         manager.addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {

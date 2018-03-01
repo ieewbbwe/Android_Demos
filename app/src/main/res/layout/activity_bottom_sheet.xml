@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/m_container_cdl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.webber.demos.weight.BottomSheetActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/show"
+            android:text="显示-->Bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/hide"
+            android:text="影藏-->Bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/expended"
+            android:text="展开-->Bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/collapsed"
+            android:text="收起-->Bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/m_bottom_sheet"
+        app:layout_behavior="@string/bottom_sheet_behavior"
+        app:behavior_hideable = "true"
+        app:behavior_peekHeight = "100dp"
+        android:layout_width="match_parent"
+        android:background="@color/colorAccent"
+        android:layout_height="500dp"/>
+
+</android.support.design.widget.CoordinatorLayout>

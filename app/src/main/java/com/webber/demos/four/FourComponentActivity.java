@@ -3,9 +3,12 @@ package com.webber.demos.four;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.webber.demos.R;
+
+import java.util.List;
 
 public class FourComponentActivity extends AppCompatActivity {
 

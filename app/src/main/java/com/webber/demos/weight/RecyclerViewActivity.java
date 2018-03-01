@@ -1,6 +1,7 @@
 package com.webber.demos.weight;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -29,8 +30,16 @@ public class RecyclerViewActivity extends AppCompatActivity {
         recyclerView.setAdapter(testAdapter);
 
         for (int i = 0; i < 25; i++) {
-            strings.add("测试数据" + i);
+            strings.add("测试数据 + 男.女-->>男．女" + i);
         }
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                strings.set(1, "测试数据强势插入！！！1");
+                testAdapter.notifyDataSetChanged();
+            }
+        },2000);
 
         testAdapter.setData(strings);
         testAdapter.notifyDataSetChanged();
