@@ -17,7 +17,9 @@ import com.webber.demos.customerview.CustomerViewActivity;
 import com.webber.demos.database.GreenDaoActivity;
 import com.webber.demos.four.FourComponentActivity;
 import com.webber.demos.fragmentdemo.FragmentDemoActivity;
+import com.webber.demos.media.MediaDemoActivity;
 import com.webber.demos.mvvm.DataBindingActivity;
+import com.webber.demos.nest.ViewPagerFragmentActivity;
 import com.webber.demos.notify.NotificationActivity;
 import com.webber.demos.primary.ReflectActivity;
 import com.webber.demos.sys.FlashLightActivity;
@@ -40,11 +42,13 @@ public class MainActivity extends AppCompatActivity {
     private DemoInfo[] DEMOS = {
             new DemoInfo("四大组件", "Activity、Service、BroadcastReceiver、ContentProvider", FourComponentActivity.class),
             new DemoInfo("Fragment", "Fragment 生命周期，replace、add", FragmentDemoActivity.class),
+            new DemoInfo("MediaPlayer", "多媒體資源專題", MediaDemoActivity.class),
             new DemoInfo("数据库相关GreenDao", "GreenDao的增删改查", GreenDaoActivity.class),
             new DemoInfo("版本升级更新", "8.0版本升级", VersionUpdateActivity.class),
             new DemoInfo("BottomSheet底部弹出框", "BottomSheet", BottomSheetActivity.class),
             new DemoInfo("列表相关", "RecycleView的坑", RecyclerViewActivity.class),
             new DemoInfo("ViewPager", "ViewPager的例子", ViewPagerDemoActivity.class),
+            new DemoInfo("VP&FGM嵌套", "各种嵌套问题", ViewPagerFragmentActivity.class),
             new DemoInfo("加载网页", "使用WebView加载", WebViewActivity.class),
             new DemoInfo("Java反射", "Java反射专题", ReflectActivity.class),
             new DemoInfo("注解", "Annotation練習",AnnotationActivity.class),

@@ -108,7 +108,14 @@
 
         <activity android:name=".weight.BottomSheetActivity" />
         <activity android:name=".database.GreenDaoActivity" />
-        <activity android:name=".view.ViewPagerDemoActivity"></activity>
+        <activity android:name=".view.ViewPagerDemoActivity" />
+        <activity
+            android:name=".media.MediaDemoActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".nest.ViewPagerFragmentActivity"></activity>
+
+        <meta-data android:name="android.max_aspect"
+            android:value="2.1"/>
     </application>
 
 </manifest>

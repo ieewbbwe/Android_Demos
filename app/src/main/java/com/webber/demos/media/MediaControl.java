@@ -5,5 +5,8 @@ package com.webber.demos.media;
  * Describe：
  */
 
-interface MediaControl {
+public interface MediaControl {
+    void play();
+    void pause();
+    void stop();
 }
