@@ -121,8 +121,8 @@ public class CustomerVideoView extends SurfaceView
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         Log.d("picher","onMeasure->>w:"+widthMeasureSpec+"h:"+heightMeasureSpec);
-        int width = MeasureSpec.getSize(widthMeasureSpec);
-        int height = width * 9/16;//MeasureSpec.getSize(heightMeasureSpec);
+        int height = MeasureSpec.getSize(heightMeasureSpec);//width / 16/9;//MeasureSpec.getSize(heightMeasureSpec);
+        int width = height*16/9;//MeasureSpec.getSize(widthMeasureSpec);
         Log.d("picher","after onMeasure->>w:"+width+"h:"+height);
         setMeasuredDimension(width,height);
     }

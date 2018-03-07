@@ -21,8 +21,8 @@ import java.lang.reflect.Method;
 
 public class MediaDemoActivity extends AppCompatActivity {
 
-    //public static String video_url = "http://video.appledaily.com.hk/mcp/encode/2018/03/01/3558058/20180301_int_73_m.mp4";
-    public static String video_url = "http://video.appledaily.com.hk/mcp/encode/2018/03/05/3560800/20180305_int_81_m.mp4";
+    public static String video_url = "http://video.appledaily.com.hk/mcp/encode/2018/03/06/3561786/20180306_int_89_m.mp4";
+    //public static String video_url = "http://baobab.wdjcdn.com/14564977406580.mp4";
     private RelativeLayout mRootRl;
 
     @Override
