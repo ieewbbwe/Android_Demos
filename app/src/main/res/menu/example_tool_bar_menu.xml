@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/m_toast_bt"
+        android:title="点我谈一个toast"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/m_clickable_bt"
+        app:showAsAction="always"
+        android:title="可点击按钮"
+        android:icon="@mipmap/ic_launcher" />
+</menu>

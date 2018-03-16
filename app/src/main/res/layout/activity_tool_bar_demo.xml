@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.webber.demos.weight.ToolBarDemoActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/m_tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:subtitle="副标题"
+            app:title="标题"
+            android:theme="@style/tool_bar_style"
+            app:subtitleTextColor="@android:color/white"
+            app:navigationIcon="@drawable/ic_arrow_back_black_24dp"
+            app:logo="@mipmap/ic_launcher"
+            app:titleTextAppearance="?android:textAppearanceLarge"
+            app:titleTextColor="@android:color/white" />
+
+        <android.support.v7.widget.Toolbar
+            android:layout_marginTop="10dp"
+            app:title="第二个！"
+            android:theme="@style/tool_bar_style"
+            android:background="@color/cardview_dark_background"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:textColor="@android:color/white"
+                    android:layout_centerInParent="true"
+                    android:text="居中的标题"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

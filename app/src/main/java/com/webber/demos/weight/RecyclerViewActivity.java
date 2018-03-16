@@ -7,9 +7,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.webber.demos.R;
 
+import java.util.AbstractQueue;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,19 +20,38 @@ public class RecyclerViewActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private List<String> strings = new ArrayList<>();
     private RecycleViewTestAdapter testAdapter;
+    private RecyclerView recyclerViewLeft;
+    private RecycleViewTestAdapter testAdapterLeft;
+    private List<String> stringsLeft = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view);
         recyclerView = (RecyclerView) findViewById(R.id.m_test_rv);
+        recyclerViewLeft = (RecyclerView) findViewById(R.id.m_test_second_rv);
+        findViewById(R.id.m_recycle_test_bt).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String str = stringsLeft.get(2);
+                str = "asdads";
+                stringsLeft.remove(1);
+                Toast.makeText(v.getContext(),stringsLeft.get(0),Toast.LENGTH_SHORT).show();
+                testAdapterLeft.notifyDataSetChanged();
+            }
+        });
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         testAdapter = new RecycleViewTestAdapter();
         recyclerView.setAdapter(testAdapter);
 
+        recyclerViewLeft.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
+        testAdapterLeft = new RecycleViewTestAdapter();
+        recyclerViewLeft.setAdapter(testAdapterLeft);
+
         for (int i = 0; i < 25; i++) {
             strings.add("测试数据 + 男.女-->>男．女" + i);
+            stringsLeft.add("测试数据 left + 男.女-->>男．女" + i);
         }
 
         new Handler().postDelayed(new Runnable() {
@@ -43,6 +64,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         testAdapter.setData(strings);
         testAdapter.notifyDataSetChanged();
+        testAdapterLeft.setData(stringsLeft);
 
         testAdapter.setOnItemClickListener(new RecycleViewTestAdapter.OnItemClickListener() {
             @Override

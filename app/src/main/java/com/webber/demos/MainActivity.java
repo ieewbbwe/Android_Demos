@@ -19,6 +19,7 @@ import com.webber.demos.anim.AnimActivity;
 import com.webber.demos.annotation.AnnotationActivity;
 import com.webber.demos.customerview.CustomerViewActivity;
 import com.webber.demos.database.GreenDaoActivity;
+import com.webber.demos.example.ExampleActivity;
 import com.webber.demos.four.FourComponentActivity;
 import com.webber.demos.fragmentdemo.FragmentDemoActivity;
 import com.webber.demos.media.MediaDemoActivity;
@@ -39,6 +40,7 @@ import com.webber.demos.weight.CoordinatorActivity;
 import com.webber.demos.weight.RecyclerViewActivity;
 import com.webber.demos.weight.SpannableActivity;
 import com.webber.demos.weight.ToolBarActivity;
+import com.webber.demos.weight.ToolBarDemoActivity;
 
 import java.util.Locale;
 
@@ -48,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
     private DemoInfo[] DEMOS = {
             new DemoInfo("四大组件", "Activity、Service、BroadcastReceiver、ContentProvider", FourComponentActivity.class),
             new DemoInfo("Fragment", "Fragment 生命周期，replace、add", FragmentDemoActivity.class),
+            new DemoInfo("各种实例", "应用主页，带侧滑菜单，视差特效", ExampleActivity.class),
+            new DemoInfo("顶部导航栏的应用", "ToolBar学习", ToolBarDemoActivity.class),
             new DemoInfo("MediaPlayer", "多媒體資源專題", MediaDemoActivity.class),
             new DemoInfo("数据库相关GreenDao", "GreenDao的增删改查", GreenDaoActivity.class),
             new DemoInfo("版本升级更新", "8.0版本升级", VersionUpdateActivity.class),

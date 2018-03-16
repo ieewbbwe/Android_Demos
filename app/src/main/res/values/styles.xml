@@ -72,4 +72,11 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+    <style name="tool_bar_style" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="titleTextColor">#0094ff</item><!--标题颜色-->
+        <item name="actionMenuTextColor">#000000</item><!--菜单颜色-->
+        <item name="android:textSize">18sp</item><!--菜单字体大小-->
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
 </resources>
