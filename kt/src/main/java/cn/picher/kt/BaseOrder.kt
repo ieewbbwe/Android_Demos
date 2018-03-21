@@ -9,7 +9,14 @@ val name : String = "mxh"
 var age = 25
 
 fun main(args: Array<String>) {
-    BaseOrder()
+    //BaseOrder()
+    DataType()
+}
+
+fun DataType(){
+    var money = 100_000_000
+    System.out.print(money.toString())
+
 }
 
 fun BaseOrder() {

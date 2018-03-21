@@ -86,6 +86,11 @@ public class RecyclerViewActivity extends AppCompatActivity {
                        recyclerView.smoothScrollBy(distanceX - centerX, 0);
                     }
                 }
+                Log.d("picher","dianj:"+postion);
+                stringsLeft.remove(1);
+                Toast.makeText(v.getContext(),stringsLeft.get(0),Toast.LENGTH_SHORT).show();
+                testAdapterLeft.notifyDataSetChanged();
+
             }
         });
 
