@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.webber.demos.anim.AnimActivity;
 import com.webber.demos.annotation.AnnotationActivity;
+import com.webber.demos.bugtest.SaveAndRestoreDemoActivity;
 import com.webber.demos.customerview.CustomerViewActivity;
 import com.webber.demos.database.GreenDaoActivity;
 import com.webber.demos.example.ExampleActivity;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             new DemoInfo("四大组件", "Activity、Service、BroadcastReceiver、ContentProvider", FourComponentActivity.class),
             new DemoInfo("Fragment", "Fragment 生命周期，replace、add", FragmentDemoActivity.class),
             new DemoInfo("各种实例", "应用主页，带侧滑菜单，视差特效", ExampleActivity.class),
+            new DemoInfo("锐化、活化问题", "ViewPager 嵌套fragment嵌套ViewPager 的问题", SaveAndRestoreDemoActivity.class),
             new DemoInfo("顶部导航栏的应用", "ToolBar学习", ToolBarDemoActivity.class),
             new DemoInfo("MediaPlayer", "多媒體資源專題", MediaDemoActivity.class),
             new DemoInfo("数据库相关GreenDao", "GreenDao的增删改查", GreenDaoActivity.class),

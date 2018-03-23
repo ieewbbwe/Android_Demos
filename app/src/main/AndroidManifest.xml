@@ -119,7 +119,8 @@
             android:value="2.1" />
 
         <activity android:name=".weight.ToolBarDemoActivity" />
-        <activity android:name=".example.ExampleActivity"></activity>
+        <activity android:name=".example.ExampleActivity" />
+        <activity android:name=".bugtest.SaveAndRestoreDemoActivity"/>
     </application>
 
 </manifest>
