@@ -29,6 +29,7 @@ import com.webber.demos.nest.ViewPagerFragmentActivity;
 import com.webber.demos.notify.NotificationActivity;
 import com.webber.demos.primary.ReflectActivity;
 import com.webber.demos.sys.FlashLightActivity;
+import com.webber.demos.sys.SystemInfoDemoActivity;
 import com.webber.demos.trandfer.TransferActivity;
 import com.webber.demos.tv.TvDemosActivity;
 import com.webber.demos.update.VersionUpdateActivity;
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
             new DemoInfo("各种实例", "应用主页，带侧滑菜单，视差特效", ExampleActivity.class),
             new DemoInfo("锐化、活化问题", "ViewPager 嵌套fragment嵌套ViewPager 的问题", SaveAndRestoreDemoActivity.class),
             new DemoInfo("顶部导航栏的应用", "ToolBar学习", ToolBarDemoActivity.class),
+            new DemoInfo("获取设备信息", "getSystemInfo", SystemInfoDemoActivity.class),
             new DemoInfo("MediaPlayer", "多媒體資源專題", MediaDemoActivity.class),
             new DemoInfo("数据库相关GreenDao", "GreenDao的增删改查", GreenDaoActivity.class),
             new DemoInfo("版本升级更新", "8.0版本升级", VersionUpdateActivity.class),

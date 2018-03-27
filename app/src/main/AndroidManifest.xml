@@ -8,6 +8,8 @@
     <!-- <uses-permission android:name="android.permission.FLSHLIGHT" /> -->
 
 
+
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
     <!-- 网络相关权限 -->
     <!-- 允许应用程序改变网络状态 -->
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
@@ -120,7 +122,8 @@
 
         <activity android:name=".weight.ToolBarDemoActivity" />
         <activity android:name=".example.ExampleActivity" />
-        <activity android:name=".bugtest.SaveAndRestoreDemoActivity"/>
+        <activity android:name=".bugtest.SaveAndRestoreDemoActivity" />
+        <activity android:name=".sys.SystemInfoDemoActivity"></activity>
     </application>
 
 </manifest>
