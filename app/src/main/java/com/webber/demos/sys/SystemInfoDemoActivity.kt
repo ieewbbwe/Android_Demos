@@ -8,6 +8,7 @@ import android.telephony.TelephonyManager
 import android.util.Log
 import android.widget.TextView
 import com.webber.demos.R
+import kotlinx.android.synthetic.main.activity_system_info_demo.*
 
 class SystemInfoDemoActivity : AppCompatActivity() {
 
@@ -16,8 +17,9 @@ class SystemInfoDemoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_system_info_demo)
         val gsfid = getGsfAndroidId(this)
         Log.d("picher",""+gsfid)
-        val mGsfIdTv = findViewById<TextView>(R.id.m_gsf_id)
-        mGsfIdTv.text = gsfid
+        m_gsf_id.text = gsfid
+        /*val mGsfIdTv = findViewById<TextView>(R.id.m_gsf_id)
+        mGsfIdTv.text = gsfid*/
     }
 
     private fun getGsfAndroidId(context: Context): String? {

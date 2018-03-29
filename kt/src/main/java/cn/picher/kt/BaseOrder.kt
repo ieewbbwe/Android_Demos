@@ -13,9 +13,23 @@ fun main(args: Array<String>) {
     //DataType()
     //classDemo()
  //   extendClassDemo()
-    C().caller(D())   // 输出 "D.foo in C"
-    C1().caller(D())  // 输出 "D.foo in C1" —— 分发接收者虚拟解析
-    C().caller(D1())
+    test04()
+}
+
+/*
+* 函数作为参数，实现String类的字符过滤
+* */
+fun String.filter(predicate: (Char) -> Boolean): String {
+    val sb = StringBuilder()
+    for (index in 0 until length) {
+        val element = get(index)
+        if (predicate(element)) sb.append(element)
+    }
+    return sb.toString()
+}
+
+fun test04() {
+    println("12eafsfsfdbzzsa".filter { it in 'a'..'f' })
 }
 
 open class D {
@@ -49,7 +63,9 @@ class C1 : C() {
 }
 
 fun extendClassDemo() {
-
+    C().caller(D())   // 输出 "D.foo in C"
+    C1().caller(D())  // 输出 "D.foo in C1" —— 分发接收者虚拟解析
+    C().caller(D1())
 }
 
 interface Humen {
