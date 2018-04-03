@@ -1,6 +1,7 @@
 package com.webber.demos.four;
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Build;
 import android.os.LocaleList;
 import android.os.PersistableBundle;
@@ -11,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.webber.demos.R;
+import com.webber.demos.four.receiver.CustomerReceiver;
 
 import java.util.List;
 import java.util.Locale;
@@ -21,7 +23,6 @@ public class FourComponentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_four_component);
-
         findViewById(R.id.m_test_bt).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,6 +34,34 @@ public class FourComponentActivity extends AppCompatActivity {
                 startActivities(new Intent[]{intent1,intent2});
             }
         });
+
+        findViewById(R.id.m_receiver_bt).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction("com.urbanairship.push.RECEIVED");
+                Bundle bundle = new Bundle();
+                bundle.putString("sound","off");
+                intent.putExtra("com.urbanairship.push.EXTRA_PUSH_MESSAGE_BUNDLE",bundle);
+
+                sendBroadcast(intent);
+            }
+        });
+
+        activityDemo();
+        receiverDemo();
+    }
+
+    private void receiverDemo() {
+
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("");
+
+
+        registerReceiver(new CustomerReceiver(), intentFilter);
+    }
+
+    private void activityDemo() {
 
         Locale locale = Locale.getDefault();
         Log.d("picher","country:"+locale.getCountry()+"toString:"+locale.toString());
