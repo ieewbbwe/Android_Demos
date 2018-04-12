@@ -41,7 +41,7 @@ public class FourComponentActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setAction("com.urbanairship.push.RECEIVED");
                 Bundle bundle = new Bundle();
-                bundle.putString("sound","off");
+                bundle.putString("sound","on");
                 intent.putExtra("com.urbanairship.push.EXTRA_PUSH_MESSAGE_BUNDLE",bundle);
 
                 sendBroadcast(intent);

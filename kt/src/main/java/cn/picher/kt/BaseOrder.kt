@@ -13,7 +13,13 @@ fun main(args: Array<String>) {
     //DataType()
     //classDemo()
  //   extendClassDemo()
-    test04()
+    //test04()
+    for (i in 65..90){
+        System.out.print(i.toChar()+"--")
+    }
+    for (i in 48..57){
+        System.out.print(i.toChar()+"--")
+    }
 }
 
 /*
@@ -143,6 +149,7 @@ fun classDemo() {
     var picher = Student("picher")
     picher.work()
 
+
    /* var personA = PersionA()
     personA = PersionA("picher")*/
 
@@ -241,6 +248,7 @@ fun area() {
         println("1..4->>" + i)
     }
 
+    // 从4-1 降序
     for (i in 4 downTo 1) {
         println("4..1->>" + i)
     }
@@ -249,6 +257,7 @@ fun area() {
         println("1..10->>" + i)
     }
 
+    //从0-10 步进5 不包括10
     for (i in 0 until 10 step 5) {
         println("1..10 until ->>" + i)
     }
