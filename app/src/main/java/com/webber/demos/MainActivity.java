@@ -39,6 +39,7 @@ import com.webber.demos.view.WebViewActivity;
 import com.webber.demos.view.camera.CameraActivity;
 import com.webber.demos.weight.BottomSheetActivity;
 import com.webber.demos.weight.CoordinatorActivity;
+import com.webber.demos.weight.CoordinatorFloatActivity;
 import com.webber.demos.weight.RecyclerViewActivity;
 import com.webber.demos.weight.SpannableActivity;
 import com.webber.demos.weight.ToolBarActivity;
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
             new DemoInfo("注解", "Annotation練習",AnnotationActivity.class),
             new DemoInfo("Android 通讯", "Socket、USB、Bluetooth", TransferActivity.class),
             new DemoInfo("CoordinatorLayout", "CoordinatorLayout处理联动", CoordinatorActivity.class),
+            new DemoInfo("悬浮菜单", "CoordinatorLayout实现悬浮菜单", CoordinatorFloatActivity.class),//KT
             new DemoInfo("SurfaceView", "SurfaceView学习", SurfaceViewActivity.class),
             new DemoInfo("动画专题", "属性动画、布局动画", AnimActivity.class),
             new DemoInfo("相机数据实时显示", "使用SurfaceView显示相机", CameraActivity.class),

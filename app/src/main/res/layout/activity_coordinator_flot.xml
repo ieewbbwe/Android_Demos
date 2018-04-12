@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.webber.demos.weight.CoordinatorFloatActivity">
+
+    <!--头部布局-->
+    <View
+        android:background="#0094ff"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:background="#000"
+                app:layout_scrollFlags="scroll|snap"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+            <!--悬浮布局-->
+            <android.support.design.widget.TabLayout
+                android:id="@+id/m_float_tab_tl"
+                app:tabMode="scrollable"
+                app:tabMinWidth="50dp"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="#027015"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+
+        </android.support.design.widget.AppBarLayout>
+
+        <!--列表-->
+        <android.support.v7.widget.RecyclerView
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:id="@+id/m_data_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </android.support.design.widget.CoordinatorLayout>
+
+
+</LinearLayout>
