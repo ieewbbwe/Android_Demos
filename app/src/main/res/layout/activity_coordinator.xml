@@ -84,9 +84,10 @@
 
 
             </LinearLayout>
+
         </android.support.v4.widget.NestedScrollView>
 
-        <WebView
+        <com.webber.demos.view.NestedScrollWebView
             android:id="@+id/m_test_wv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

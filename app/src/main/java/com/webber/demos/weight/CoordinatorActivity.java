@@ -55,11 +55,19 @@ public class CoordinatorActivity extends AppCompatActivity {
             }
         });
 
-        mTestWv.setWebViewClient(new WebViewClient());
+        mTestWv.setWebViewClient(new WebViewClient(){
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                Log.d("picher","finish bottomPadding:"+view.getPaddingBottom());
+            }
+        });
+        mTestWv.getSettings().setJavaScriptEnabled(true);
 
         //mTestWv.loadUrl("https://www.baidu.com/");
         //mTestWv.loadUrl("https://hk.appledaily.com/livestream/channel/legco/?&mobile=1");
-        mTestWv.loadUrl("https://hk.feature.appledaily.com/overseasproperty/");
+        //mTestWv.loadUrl("https://hk.feature.appledaily.com/overseasproperty/");
+        mTestWv.loadUrl("https://blog.csdn.net/mq2856992713/article/details/78574444");
 
         coordinatorLayout = findViewById(R.id.m_root_cdl);
         appbar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
