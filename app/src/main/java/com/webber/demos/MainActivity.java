@@ -34,6 +34,7 @@ import com.webber.demos.trandfer.TransferActivity;
 import com.webber.demos.tv.TvDemosActivity;
 import com.webber.demos.update.VersionUpdateActivity;
 import com.webber.demos.view.SurfaceViewActivity;
+import com.webber.demos.view.ViewDemoActivity;
 import com.webber.demos.view.ViewPagerDemoActivity;
 import com.webber.demos.view.WebViewActivity;
 import com.webber.demos.view.camera.CameraActivity;
@@ -55,29 +56,19 @@ public class MainActivity extends AppCompatActivity {
             new DemoInfo("Fragment", "Fragment 生命周期，replace、add", FragmentDemoActivity.class),
             new DemoInfo("各种实例", "应用主页，带侧滑菜单，视差特效", ExampleActivity.class),
             new DemoInfo("锐化、活化问题", "ViewPager 嵌套fragment嵌套ViewPager 的问题", SaveAndRestoreDemoActivity.class),
-            new DemoInfo("顶部导航栏的应用", "ToolBar学习", ToolBarDemoActivity.class),
+            new DemoInfo("View学习", "Android控件、自定义控件", ViewDemoActivity.class),
             new DemoInfo("获取设备信息", "getSystemInfo", SystemInfoDemoActivity.class),
             new DemoInfo("MediaPlayer", "多媒體資源專題", MediaDemoActivity.class),
             new DemoInfo("数据库相关GreenDao", "GreenDao的增删改查", GreenDaoActivity.class),
             new DemoInfo("版本升级更新", "8.0版本升级", VersionUpdateActivity.class),
-            new DemoInfo("BottomSheet底部弹出框", "BottomSheet", BottomSheetActivity.class),
-            new DemoInfo("列表相关", "RecycleView的坑", RecyclerViewActivity.class),
-            new DemoInfo("ViewPager", "ViewPager的例子", ViewPagerDemoActivity.class),
-            new DemoInfo("VP&FGM嵌套", "各种嵌套问题", ViewPagerFragmentActivity.class),
-            new DemoInfo("加载网页", "使用WebView加载", WebViewActivity.class),
             new DemoInfo("Java反射", "Java反射专题", ReflectActivity.class),
             new DemoInfo("注解", "Annotation練習",AnnotationActivity.class),
             new DemoInfo("Android 通讯", "Socket、USB、Bluetooth", TransferActivity.class),
-            new DemoInfo("CoordinatorLayout", "CoordinatorLayout处理联动", CoordinatorActivity.class),
-            new DemoInfo("悬浮菜单", "CoordinatorLayout实现悬浮菜单", CoordinatorFloatActivity.class),//KT
-            new DemoInfo("SurfaceView", "SurfaceView学习", SurfaceViewActivity.class),
             new DemoInfo("动画专题", "属性动画、布局动画", AnimActivity.class),
             new DemoInfo("相机数据实时显示", "使用SurfaceView显示相机", CameraActivity.class),
             new DemoInfo("TV相关示例", "TV开发相关示例", TvDemosActivity.class),
-            new DemoInfo("ToolBar学习", "官方推出的头部控件", ToolBarActivity.class),
             new DemoInfo("Fragment", "Fragment这个坑是要填一填", ToolBarActivity.class),
             new DemoInfo("FlashLight", "闪光灯Demo",FlashLightActivity.class),
-            new DemoInfo("自定义控件", "CustomerView",CustomerViewActivity.class),
             new DemoInfo("MVVM", "使用DataBinding",DataBindingActivity.class),
             new DemoInfo("通知相关Demo", "Notify",NotificationActivity.class),
             new DemoInfo("富文本", "富文本练习",SpannableActivity.class),

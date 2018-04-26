@@ -58,7 +58,8 @@ public class CoordinatorActivity extends AppCompatActivity {
         mTestWv.setWebViewClient(new WebViewClient());
 
         //mTestWv.loadUrl("https://www.baidu.com/");
-        mTestWv.loadUrl("https://hk.appledaily.com/livestream/channel/legco/?&mobile=1");
+        //mTestWv.loadUrl("https://hk.appledaily.com/livestream/channel/legco/?&mobile=1");
+        mTestWv.loadUrl("https://hk.feature.appledaily.com/overseasproperty/");
 
         coordinatorLayout = findViewById(R.id.m_root_cdl);
         appbar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {

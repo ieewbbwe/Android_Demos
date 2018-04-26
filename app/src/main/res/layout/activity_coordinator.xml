@@ -47,6 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_gravity="bottom"
+        android:visibility="gone"
         android:background="#0094ff" />
 
     <FrameLayout
@@ -57,6 +58,7 @@
 
         <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
+            android:visibility="gone"
             android:layout_height="match_parent">
 
             <LinearLayout
@@ -80,13 +82,15 @@
                     android:layout_gravity="bottom"
                     android:background="#008487" />
 
-                <WebView
-                    android:id="@+id/m_test_wv"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:visibility="gone" />
+
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>
+
+        <WebView
+            android:id="@+id/m_test_wv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible" />
     </FrameLayout>
 
     <!--<android.support.v4.widget.NestedScrollView

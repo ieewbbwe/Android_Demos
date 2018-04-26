@@ -122,7 +122,8 @@
         <activity android:name=".example.ExampleActivity" />
         <activity android:name=".bugtest.SaveAndRestoreDemoActivity" />
         <activity android:name=".sys.SystemInfoDemoActivity" />
-        <activity android:name=".weight.CoordinatorFloatActivity"></activity>
+        <activity android:name=".weight.CoordinatorFloatActivity" />
+        <activity android:name=".view.ViewDemoActivity"></activity>
     </application>
 
 </manifest>
