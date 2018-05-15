@@ -13,6 +13,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.view.inputmethod.EditorInfo;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -39,15 +40,29 @@ public class ControlListActivity extends AppCompatActivity {
         mAdapter = new ControlAdapter();
         mDemoRv.setLayoutManager(mLayoutManager);
         mDemoRv.setAdapter(mAdapter);
-        for (int i = 0; i < 2; i++) {
+        Log.d("picher","设置数据之前：" + mLayoutManager.findLastVisibleItemPosition());
+        for (int i = 0; i < 20; i++) {
             mListDatas.add(new ControlItemModel());
         }
         mAdapter.notifyDataSetChanged();
-
+        Log.d("picher","更新数据之后：" + mLayoutManager.findLastVisibleItemPosition());
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Log.d("picher","延迟之后：" + mLayoutManager.findLastVisibleItemPosition());
+            }
+        },1500);
         mDemoRv.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
             @Override
             public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
-                Log.d("picher","layoutChange");
+                Log.d("picher","layoutChange：" + mLayoutManager.findLastVisibleItemPosition());
+            }
+        });
+
+        mDemoRv.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                Log.d("picher","onGlobalLayout：" + mLayoutManager.findLastVisibleItemPosition());
             }
         });
     }
