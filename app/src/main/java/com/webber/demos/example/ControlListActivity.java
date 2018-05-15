@@ -77,6 +77,7 @@ public class ControlListActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, final int position) {
+            Log.d("picher","bindData:"+position);
             ControlItemModel item = mListDatas.get(position);
 
             holder.mItemEt.setOnEditorActionListener(new TextView.OnEditorActionListener() {
