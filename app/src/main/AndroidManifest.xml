@@ -123,7 +123,8 @@
         <activity android:name=".bugtest.SaveAndRestoreDemoActivity" />
         <activity android:name=".sys.SystemInfoDemoActivity" />
         <activity android:name=".weight.CoordinatorFloatActivity" />
-        <activity android:name=".view.ViewDemoActivity"></activity>
+        <activity android:name=".view.ViewDemoActivity" />
+        <activity android:name=".example.ControlListActivity" />
     </application>
 
 </manifest>

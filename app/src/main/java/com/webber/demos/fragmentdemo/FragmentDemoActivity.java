@@ -1,5 +1,6 @@
 package com.webber.demos.fragmentdemo;
 
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -32,17 +33,35 @@ public class FragmentDemoActivity extends AppCompatActivity {
         mAddFragmentBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment;
+              /*  Fragment fragment;
                 if (click == 0) {
                     fragment = new ListFragment();
                 } else {
                     fragment = new NormalFragment();
                 }
                 click++;
-                switchFragment(fragment);
+                switchFragment(fragment);*/
+                //demo01();
             }
         });
 
+        //Activity not found
+        //for(int i=0;i<10;i++){
+            demo01();
+        //}
+
+
+    }
+
+    private void demo01() {
+        String imageUrl = "http://static.apple.appledaily.com.hk/images/e-paper/20180512/large/1526112253_3d67.jpg";
+        ForegroundPushFragment.ForegroundPushMessage message = new ForegroundPushFragment.ForegroundPushMessage("标题","contentMessage",""
+                ,imageUrl, BitmapFactory.decodeResource(getResources(),R.mipmap.ic_169));
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        Fragment fragment = ForegroundPushFragment.create(message);
+        ft.add(fragment, "foreground_push_dialog");
+        ft.commitAllowingStateLoss();
+        getSupportFragmentManager().executePendingTransactions();
     }
 
     private void switchFragment(final Fragment fragment) {

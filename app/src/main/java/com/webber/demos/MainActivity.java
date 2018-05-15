@@ -20,6 +20,7 @@ import com.webber.demos.annotation.AnnotationActivity;
 import com.webber.demos.bugtest.SaveAndRestoreDemoActivity;
 import com.webber.demos.customerview.CustomerViewActivity;
 import com.webber.demos.database.GreenDaoActivity;
+import com.webber.demos.example.ControlListActivity;
 import com.webber.demos.example.ExampleActivity;
 import com.webber.demos.four.FourComponentActivity;
 import com.webber.demos.fragmentdemo.FragmentDemoActivity;
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
             new DemoInfo("MVVM", "使用DataBinding",DataBindingActivity.class),
             new DemoInfo("通知相关Demo", "Notify",NotificationActivity.class),
             new DemoInfo("富文本", "富文本练习",SpannableActivity.class),
+            new DemoInfo("回车Demo", "list中回车可以添加下一行",ControlListActivity.class),
     };
 
     @Override
