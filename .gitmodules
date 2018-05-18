@@ -1,0 +1,3 @@
+[submodule "sub"]
+	path = sub
+	url = git@bitbucket.org:wisersoft/sdk-core.git
