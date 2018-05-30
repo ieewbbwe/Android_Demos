@@ -1,5 +1,6 @@
 package com.webber.demos.mvvm;
 
+import android.arch.persistence.room.Ignore;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import android.util.Log;
@@ -20,6 +21,7 @@ public class User extends BaseObservable {
     public User() {
     }
 
+    @Ignore
     public User(String name, String age) {
         this.name = name;
         this.age = age;

@@ -20,10 +20,13 @@ import com.webber.demos.annotation.AnnotationActivity;
 import com.webber.demos.bugtest.SaveAndRestoreDemoActivity;
 import com.webber.demos.customerview.CustomerViewActivity;
 import com.webber.demos.database.GreenDaoActivity;
+import com.webber.demos.database.ProviderDemoActivity;
+import com.webber.demos.database.room.RoomDateBasesActivity;
 import com.webber.demos.example.ControlListActivity;
 import com.webber.demos.example.ExampleActivity;
 import com.webber.demos.four.FourComponentActivity;
 import com.webber.demos.fragmentdemo.FragmentDemoActivity;
+import com.webber.demos.google.AdvertiseActivity;
 import com.webber.demos.media.MediaDemoActivity;
 import com.webber.demos.mvvm.DataBindingActivity;
 import com.webber.demos.nest.ViewPagerFragmentActivity;
@@ -56,11 +59,14 @@ public class MainActivity extends AppCompatActivity {
             new DemoInfo("四大组件", "Activity、Service、BroadcastReceiver、ContentProvider", FourComponentActivity.class),
             new DemoInfo("Fragment", "Fragment 生命周期，replace、add", FragmentDemoActivity.class),
             new DemoInfo("各种实例", "应用主页，带侧滑菜单，视差特效", ExampleActivity.class),
+            new DemoInfo("8.0适配问题", "ContentProvider 传递报错", ProviderDemoActivity.class),
+            new DemoInfo("广告权限", "Google 库权限--广告", AdvertiseActivity.class),
             new DemoInfo("锐化、活化问题", "ViewPager 嵌套fragment嵌套ViewPager 的问题", SaveAndRestoreDemoActivity.class),
             new DemoInfo("View学习", "Android控件、自定义控件", ViewDemoActivity.class),
             new DemoInfo("获取设备信息", "getSystemInfo", SystemInfoDemoActivity.class),
             new DemoInfo("MediaPlayer", "多媒體資源專題", MediaDemoActivity.class),
             new DemoInfo("数据库相关GreenDao", "GreenDao的增删改查", GreenDaoActivity.class),
+            new DemoInfo("数据库相关Room", "Room的增删改查及测试", RoomDateBasesActivity.class),
             new DemoInfo("版本升级更新", "8.0版本升级", VersionUpdateActivity.class),
             new DemoInfo("Java反射", "Java反射专题", ReflectActivity.class),
             new DemoInfo("注解", "Annotation練習",AnnotationActivity.class),

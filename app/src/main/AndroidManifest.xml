@@ -25,6 +25,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
 
     <application
+        android:name=".NApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -125,6 +126,20 @@
         <activity android:name=".weight.CoordinatorFloatActivity" />
         <activity android:name=".view.ViewDemoActivity" />
         <activity android:name=".example.ControlListActivity" />
+        <activity android:name=".database.ProviderDemoActivity" />
+
+        <provider
+            android:name=".database.DemoProvider"
+            android:authorities="com.webber.demos" />
+        <provider
+            android:name="com.activeandroid.content.ContentProvider"
+            android:authorities="com.webber.demos" />
+        <provider
+            android:name=".database.NotAuthorityProvider"
+            android:authorities="com.webber.demos" />
+
+        <activity android:name=".database.room.RoomDateBasesActivity" />
+        <activity android:name=".google.AdvertiseActivity"></activity>
     </application>
 
 </manifest>

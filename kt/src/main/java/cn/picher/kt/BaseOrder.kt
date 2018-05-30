@@ -1,5 +1,7 @@
 package cn.picher.kt
 
+import android.util.Log
+
 /**
  * Created by picher on 2018/3/13.
  * Describe：KT 基础命令语法
@@ -9,17 +11,12 @@ val name: String = "mxh"
 var age = 25
 
 fun main(args: Array<String>) {
-    //BaseOrder()
+    BaseOrder()
     //DataType()
     //classDemo()
  //   extendClassDemo()
     //test04()
-    for (i in 65..90){
-        System.out.print(i.toChar()+"--")
-    }
-    for (i in 48..57){
-        System.out.print(i.toChar()+"--")
-    }
+
 }
 
 /*
@@ -239,7 +236,19 @@ fun BaseOrder() {
     //example()
     //nullCheck()
     //instance(1)
-    area()
+    //area()
+    listDemo()
+}
+
+fun listDemo() {
+    var strs:MutableList<String> = mutableListOf()
+    for(i in 1..5){
+        strs.add(i.toString())
+    }
+    System.out.print(""+strs.size)
+    for(u in strs){
+        System.out.print(""+u)
+    }
 }
 
 fun area() {
