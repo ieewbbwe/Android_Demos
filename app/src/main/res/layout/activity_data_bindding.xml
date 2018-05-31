@@ -3,6 +3,7 @@
 <layout>
 
     <data>
+        <import type="android.databinding.DataBindingUtil"/>
 
         <variable
         name="user"
@@ -23,7 +24,7 @@
             android:text="@{user.name}" />
 
         <EditText
-            android:text="@{user.name}"
+            android:text="@{DataBindingUtil.converToUpperCase(user.name)}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

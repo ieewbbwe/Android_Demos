@@ -50,7 +50,7 @@ public class AdvertiseActivity extends AppCompatActivity {
     }
 
     private void request() {
-        String[] publisherId = {"pub-3513878437385321","pub-7350"};
+        String[] publisherId = {"pub-2641036303248901","pub-3513878437385321","pub-7350"};
         consentInformation.requestConsentInfoUpdate(publisherId, new ConsentInfoUpdateListener() {
             @Override
             public void onConsentInfoUpdated(ConsentStatus consentStatus) {

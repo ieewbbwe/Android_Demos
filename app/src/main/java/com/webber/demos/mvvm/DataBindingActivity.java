@@ -18,5 +18,6 @@ public class DataBindingActivity extends AppCompatActivity {
         dataBinding = DataBindingUtil.setContentView(this, R.layout.activity_data_bindding);
         dataBinding.setVariable(BR.user,new User("picher","24"));
         dataBinding.setVariable(BR.person,new User("person","24"));
+
     }
 }
