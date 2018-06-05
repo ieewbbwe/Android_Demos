@@ -1,6 +1,7 @@
 package com.webber.demos.mvvm;
 
 import android.databinding.BindingAdapter;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
@@ -11,7 +12,7 @@ import android.widget.TextView;
 public class DataBindUtiles {
 
     @BindingAdapter("converToUpperCase")
-    public static String converToUpperCase(TextView textView, String upText){
+    public static String converToUpperCase(EditText textView, String upText){
         return upText.toUpperCase();
     }
 }

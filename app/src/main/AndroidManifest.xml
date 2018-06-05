@@ -139,7 +139,8 @@
             android:authorities="com.webber.demos" />
 
         <activity android:name=".database.room.RoomDateBasesActivity" />
-        <activity android:name=".google.AdvertiseActivity"></activity>
+        <activity android:name=".google.AdvertiseActivity" />
+        <activity android:name=".database.realm.RealmDataBasesActivity"></activity>
     </application>
 
 </manifest>

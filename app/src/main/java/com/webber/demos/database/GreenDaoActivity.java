@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.webber.demos.R;
+import com.webber.demos.database.realm.UserRealm;
 import com.webber.demos.database.room.AndroidDataBases;
 import com.webber.demos.database.room.UserDao;
 import com.webber.demos.database.room.UserRoom;
@@ -24,6 +25,7 @@ import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
+import io.realm.Realm;
 
 public class GreenDaoActivity extends AppCompatActivity implements GreenDaoContract.View {
 
@@ -42,7 +44,7 @@ public class GreenDaoActivity extends AppCompatActivity implements GreenDaoContr
         insertBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Completable.fromAction(new Action() {
+            /*Completable.fromAction(new Action() {
                 @Override
                 public void run() throws Exception {
                     UserRoom user = new UserRoom("admin", 25,new Date(System.currentTimeMillis()));
@@ -55,7 +57,11 @@ public class GreenDaoActivity extends AppCompatActivity implements GreenDaoContr
                         public void run() throws Exception {
                             Log.d("picher","插入成功");
                         }
-                    });
+                    });*/
+                List<UserRealm> userRealms = Realm.getDefaultInstance().where(UserRealm.class).findAll();
+                for(int i = 0;i<userRealms.size();i++){
+                    Log.d("picher","pos:"+i+"name"+userRealms.get(i).getName());
+                }
             }
         });
 

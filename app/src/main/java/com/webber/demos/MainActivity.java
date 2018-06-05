@@ -21,6 +21,7 @@ import com.webber.demos.bugtest.SaveAndRestoreDemoActivity;
 import com.webber.demos.customerview.CustomerViewActivity;
 import com.webber.demos.database.GreenDaoActivity;
 import com.webber.demos.database.ProviderDemoActivity;
+import com.webber.demos.database.realm.RealmDataBasesActivity;
 import com.webber.demos.database.room.RoomDateBasesActivity;
 import com.webber.demos.example.ControlListActivity;
 import com.webber.demos.example.ExampleActivity;
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
             new DemoInfo("MediaPlayer", "多媒體資源專題", MediaDemoActivity.class),
             new DemoInfo("数据库相关GreenDao", "GreenDao的增删改查", GreenDaoActivity.class),
             new DemoInfo("数据库相关Room", "Room的增删改查及测试", RoomDateBasesActivity.class),
+            new DemoInfo("数据库相关Realm", "Realm的增删改查及测试", RealmDataBasesActivity.class),
             new DemoInfo("版本升级更新", "8.0版本升级", VersionUpdateActivity.class),
             new DemoInfo("Java反射", "Java反射专题", ReflectActivity.class),
             new DemoInfo("注解", "Annotation練習",AnnotationActivity.class),

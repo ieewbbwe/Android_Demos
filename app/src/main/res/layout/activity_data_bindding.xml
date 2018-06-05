@@ -3,11 +3,12 @@
 <layout>
 
     <data>
-        <import type="android.databinding.DataBindingUtil"/>
+
+        <import type="android.databinding.DataBindingUtil" />
 
         <variable
-        name="user"
-        type="com.webber.demos.mvvm.User"/>
+            name="user"
+            type="com.webber.demos.mvvm.User" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -24,14 +25,14 @@
             android:text="@{user.name}" />
 
         <EditText
-            android:text="@{DataBindingUtil.converToUpperCase(user.name)}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+        <!--android:text="@{DataBindingUtil.converToUpperCase(user.name)}"-->
 
         <EditText
-            android:text="@{user.age}"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@{user.age}" />
 
         <!--<Button
             android:onClick="@{()->user.print()}"
@@ -43,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />-->
 
-        <include layout="@layout/layout_databinding"/>
+        <include layout="@layout/layout_databinding" />
     </LinearLayout>
 </layout>
 
