@@ -32,15 +32,21 @@ class RoomDateBasesActivity : AppCompatActivity() {
         })
 
         searchBt.setOnClickListener({
-            //flowableDemo()
+            flowableDemo()
+            //flowableDemo1()
             //observableSearch()
             //deleteByName("admin2")
-            searchLatest()
+            //searchLatest()
             /* AsyncTask.execute(Runnable {
                  var raws = userDao.queryForAll()
                  Log.d("picher","数据库："+raws.size)
              })*/
         })
+    }
+
+    private fun flowableDemo1() {
+
+
     }
 
     private fun searchLatest() {
@@ -77,12 +83,14 @@ class RoomDateBasesActivity : AppCompatActivity() {
     }
 
     private fun flowableDemo() {
-         Log.d("picher","click search")
-           userDao.queryAll().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+           userDao.queryAll().subscribeOn(Schedulers.io())
                    .map({ users -> var names = ""
-                       Log.d("picher","数据库："+users.size)
+                       Log.d("picher","数据库："+users.size+""+Thread.currentThread().name)
                        for (item in users) names += item.name
                        names
-                   }).subscribe({ names -> showTv.text = names })
+                   }).observeOn(AndroidSchedulers.mainThread()).subscribe({ names ->
+               Log.d("picher","縣城："+Thread.currentThread().name)
+               showTv.text = names
+           })
     }
 }

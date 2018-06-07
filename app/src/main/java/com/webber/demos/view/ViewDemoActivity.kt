@@ -24,6 +24,7 @@ class ViewDemoActivity : AppCompatActivity() {
     var DEMOS : Array<DemoInfo> = arrayOf(
             DemoInfo("BottomSheet底部弹出框", "BottomSheet", BottomSheetActivity::class.java),
             DemoInfo("列表相关", "RecycleView的坑", RecyclerViewActivity::class.java),
+            DemoInfo("新布局Demo", "Constraint学习", ConstraintLayoutActivity::class.java),
             DemoInfo("ViewPager", "ViewPager的例子", ViewPagerDemoActivity::class.java),
             DemoInfo("VP&FGM嵌套", "各种嵌套问题", ViewPagerFragmentActivity::class.java),
             DemoInfo("加载网页", "使用WebView加载", WebViewActivity::class.java),

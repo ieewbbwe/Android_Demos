@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/m_root_cl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.webber.demos.view.ConstraintLayoutActivity">
+
+    <!--基础定位指令-->
+    <ImageView
+        android:id="@+id/m_image_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintBottom_toBottomOf="@+id/m_root_cl"
+        app:layout_constraintLeft_toLeftOf="@+id/m_root_cl"
+        app:layout_constraintRight_toRightOf="@+id/m_root_cl"
+        app:layout_constraintTop_toTopOf="@+id/m_root_cl" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="顶部左对齐"
+        app:layout_constraintBottom_toTopOf="@+id/m_image_iv"
+        app:layout_constraintLeft_toLeftOf="@+id/m_image_iv" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="底部右对齐"
+        app:layout_constraintRight_toRightOf="@+id/m_image_iv"
+        app:layout_constraintTop_toBottomOf="@+id/m_image_iv" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="居于控件右侧"
+        app:layout_constraintLeft_toRightOf="@+id/m_image_iv"
+        app:layout_constraintTop_toTopOf="@+id/m_image_iv" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="左侧底对齐"
+        app:layout_constraintBottom_toBottomOf="@+id/m_image_iv"
+        app:layout_constraintRight_toLeftOf="@+id/m_image_iv" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="控件居中右对齐"
+        app:layout_constraintBottom_toBottomOf="@+id/m_root_cl"
+        app:layout_constraintLeft_toRightOf="@id/m_image_iv"
+        app:layout_constraintRight_toRightOf="@id/m_root_cl"
+        app:layout_constraintTop_toTopOf="@+id/m_root_cl" />
+
+    <!--基线-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="居中对齐"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintLeft_toLeftOf="@+id/m_root_cl"
+        app:layout_constraintRight_toRightOf="@+id/m_root_cl" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <!--链样式-->
+    <Button
+        android:id="@+id/m_chain_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="链样式1"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/m_chain_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="链样式2"
+        app:layout_constraintLeft_toRightOf="@+id/m_chain_1"/>
+
+    <Button
+        android:id="@+id/m_chain_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="链样式3"
+        app:layout_constraintLeft_toRightOf="@+id/m_chain_2"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!--宽高比例-->
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Ratio"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

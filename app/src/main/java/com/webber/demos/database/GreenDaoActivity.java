@@ -12,6 +12,9 @@ import com.webber.demos.database.room.AndroidDataBases;
 import com.webber.demos.database.room.UserDao;
 import com.webber.demos.database.room.UserRoom;
 
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
 import java.util.Date;
 import java.util.List;
 
@@ -44,7 +47,7 @@ public class GreenDaoActivity extends AppCompatActivity implements GreenDaoContr
         insertBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            /*Completable.fromAction(new Action() {
+            Completable.fromAction(new Action() {
                 @Override
                 public void run() throws Exception {
                     UserRoom user = new UserRoom("admin", 25,new Date(System.currentTimeMillis()));
@@ -57,11 +60,11 @@ public class GreenDaoActivity extends AppCompatActivity implements GreenDaoContr
                         public void run() throws Exception {
                             Log.d("picher","插入成功");
                         }
-                    });*/
-                List<UserRealm> userRealms = Realm.getDefaultInstance().where(UserRealm.class).findAll();
+                    });
+               /* List<UserRealm> userRealms = Realm.getDefaultInstance().where(UserRealm.class).findAll();
                 for(int i = 0;i<userRealms.size();i++){
                     Log.d("picher","pos:"+i+"name"+userRealms.get(i).getName());
-                }
+                }*/
             }
         });
 

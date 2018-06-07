@@ -34,20 +34,33 @@ class RealmDataBasesActivity : AppCompatActivity() {
             //demoInsert04()
             //demoInsert05()
             //demoInsert06()
-            demoInsert07()
+            //demoInsert07()
+            demoInsert08()
         })
         queryBt.setOnClickListener({
             //demoSearch01()
             //demoSearch02()
-            //demoSearch03()
+            demoSearch03()
             //demoSearch04()
-            demoSearch05()
+          //  demoSearch05()
         })
         deleteBt.setOnClickListener({
             mRealm.executeTransaction({ realm ->
                 realm.delete(UserRealm::class.java)
             })
         })
+    }
+
+    private fun demoInsert08() {
+        mRealm.executeTransaction({realm ->
+            var user:UserRealm
+            for(i in 1..500){
+                user = UserRealm()
+                user.name = "name"+i
+                realm.insert(user)
+            }
+        })
+        mRealm.close()
     }
 
     private fun demoSearch05() {
@@ -101,8 +114,10 @@ class RealmDataBasesActivity : AppCompatActivity() {
     }
 
     private fun demoSearch03() {
+        mRealm = Realm.getDefaultInstance()
         mRealm.executeTransaction({ realm ->
             val users = realm.where(UserRealm::class.java).findAll()
+            Log.d("picher", "User個數:" + users.size)
             for (i in users) {
                 Log.d("picher", "User:" + i.name)
             }
