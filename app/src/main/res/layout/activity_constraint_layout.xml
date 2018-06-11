@@ -76,24 +76,26 @@
         android:id="@+id/m_chain_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="66dp"
         android:text="链样式1"
+        app:layout_constraintEnd_toStartOf="@+id/m_chain_2"
         app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/m_chain_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="链样式2"
-        app:layout_constraintLeft_toRightOf="@+id/m_chain_1"/>
+        app:layout_constraintLeft_toRightOf="@+id/m_chain_1" />
 
     <Button
         android:id="@+id/m_chain_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="链样式3"
-        app:layout_constraintLeft_toRightOf="@+id/m_chain_2"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/m_chain_2" />
 
     <!--宽高比例-->
     <Button
@@ -102,6 +104,6 @@
         android:text="Ratio"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="2:1"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

@@ -158,7 +158,7 @@ class RealmDataBasesActivity : AppCompatActivity() {
     }
 
     private fun demoInsert03() {
-        mRealm.executeTransaction({ realm ->
+        mRealm.executeTransactionAsync({ realm ->
             val user = UserRealm("Webber", 25, Date(System.currentTimeMillis()))
             Log.d("picher", "demoInsert03:" + user.name)
 

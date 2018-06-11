@@ -3,8 +3,10 @@ package com.webber.demos.database.realm;
 import java.util.Date;
 import java.util.UUID;
 
+import io.realm.RealmModel;
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
+import io.realm.annotations.RealmClass;
 import io.realm.annotations.Required;
 
 /**
