@@ -141,7 +141,8 @@
         <activity android:name=".database.room.RoomDateBasesActivity" />
         <activity android:name=".google.AdvertiseActivity" />
         <activity android:name=".database.realm.RealmDataBasesActivity" />
-        <activity android:name=".view.ConstraintLayoutActivity"></activity>
+        <activity android:name=".view.ConstraintLayoutActivity" />
+        <activity android:name=".utils.UtilsDemoActivity"></activity>
     </application>
 
 </manifest>
