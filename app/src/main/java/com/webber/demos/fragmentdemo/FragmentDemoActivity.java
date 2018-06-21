@@ -33,21 +33,21 @@ public class FragmentDemoActivity extends AppCompatActivity {
         mAddFragmentBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              /*  Fragment fragment;
+                Fragment fragment;
                 if (click == 0) {
                     fragment = new ListFragment();
                 } else {
                     fragment = new NormalFragment();
                 }
                 click++;
-                switchFragment(fragment);*/
+                switchFragment(fragment);
                 //demo01();
             }
         });
 
         //Activity not found
         //for(int i=0;i<10;i++){
-            demo01();
+            //demo01();
         //}
 
 
