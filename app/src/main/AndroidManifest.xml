@@ -153,7 +153,6 @@
                 <data
                     android:host="www.baidu.com"
                     android:scheme="https" />
-
                 <data
                     android:host="www.baidu.com"
                     android:pathPattern="/article/2221"
@@ -168,6 +167,9 @@
                     android:scheme="http" />
             </intent-filter>
         </activity>
+        <activity android:name=".four.shareanim.ShareAnimActivity" />
+        <activity android:name=".four.shareanim.EntryAnimActivity" />
+        <activity android:name=".four.shareanim.ShareElementActivity"></activity>
     </application>
 
 </manifest>

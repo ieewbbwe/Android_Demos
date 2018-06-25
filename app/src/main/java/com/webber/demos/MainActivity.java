@@ -26,6 +26,7 @@ import com.webber.demos.database.room.RoomDateBasesActivity;
 import com.webber.demos.example.ControlListActivity;
 import com.webber.demos.example.ExampleActivity;
 import com.webber.demos.four.FourComponentActivity;
+import com.webber.demos.four.shareanim.ShareAnimActivity;
 import com.webber.demos.fragmentdemo.FragmentDemoActivity;
 import com.webber.demos.google.AdvertiseActivity;
 import com.webber.demos.media.MediaDemoActivity;
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
             new DemoInfo("四大组件", "Activity、Service、BroadcastReceiver、ContentProvider", FourComponentActivity.class),
             new DemoInfo("Fragment", "Fragment 生命周期，replace、add", FragmentDemoActivity.class),
             new DemoInfo("各种实例", "应用主页，带侧滑菜单，视差特效", ExampleActivity.class),
+            new DemoInfo("Activity转场动画", "转场动画，共享元素", ShareAnimActivity.class),
             new DemoInfo("8.0适配问题", "ContentProvider 传递报错", ProviderDemoActivity.class),
             new DemoInfo("广告权限", "Google 库权限--广告", AdvertiseActivity.class),
             new DemoInfo("锐化、活化问题", "ViewPager 嵌套fragment嵌套ViewPager 的问题", SaveAndRestoreDemoActivity.class),

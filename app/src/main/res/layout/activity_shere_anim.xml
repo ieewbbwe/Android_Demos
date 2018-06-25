@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.webber.demos.four.shareanim.ShareAnimActivity">
+
+    <Button
+        android:id="@+id/openExplain"
+        android:text="分解打开"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/openSlide"
+        app:layout_constraintTop_toBottomOf="@id/openExplain"
+        android:text="滑动打开"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/openFade"
+        app:layout_constraintTop_toBottomOf="@id/openSlide"
+        android:text="渐入打开"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        app:layout_constraintTop_toBottomOf="@+id/openFade"
+        android:id="@+id/shareBt1"
+        android:text="共享元素1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</android.support.constraint.ConstraintLayout>
