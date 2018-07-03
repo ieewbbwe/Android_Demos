@@ -6,29 +6,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.gson.Gson;
 import com.webber.demos.R;
-import com.webber.demos.database.realm.UserRealm;
-import com.webber.demos.database.room.AndroidDataBases;
+import com.webber.demos.database.greendao.GreenDaoManager;
+import com.webber.demos.database.greendao.UserGreen;
+import com.webber.demos.database.greendao.UserGreenDao;
 import com.webber.demos.database.room.UserDao;
-import com.webber.demos.database.room.UserRoom;
-
-import org.reactivestreams.Subscriber;
-import org.reactivestreams.Subscription;
 
 import java.util.Date;
 import java.util.List;
-
-import io.reactivex.BackpressureStrategy;
-import io.reactivex.Completable;
-import io.reactivex.Flowable;
-import io.reactivex.FlowableEmitter;
-import io.reactivex.FlowableOnSubscribe;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.functions.Action;
-import io.reactivex.functions.Consumer;
-import io.reactivex.functions.Function;
-import io.reactivex.schedulers.Schedulers;
-import io.realm.Realm;
 
 public class GreenDaoActivity extends AppCompatActivity implements GreenDaoContract.View {
 
@@ -42,57 +28,44 @@ public class GreenDaoActivity extends AppCompatActivity implements GreenDaoContr
         setContentView(R.layout.activity_green_dao);
         insertBt = findViewById(R.id.insetBt);
         searchBt = findViewById(R.id.searchBt);
-        AndroidDataBases.getInstance().getOpenHelper().getReadableDatabase().getPath();
-        userDao = AndroidDataBases.getInstance().userDao();
+
         insertBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Completable.fromAction(new Action() {
-                @Override
-                public void run() throws Exception {
-                    UserRoom user = new UserRoom("admin", 25,new Date(System.currentTimeMillis()));
-                    long raw = userDao.insertUser(user);
-                    Log.d("picher","插入完成："+raw);
-                }
-            }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(new Action() {
-                        @Override
-                        public void run() throws Exception {
-                            Log.d("picher","插入成功");
-                        }
-                    });
-               /* List<UserRealm> userRealms = Realm.getDefaultInstance().where(UserRealm.class).findAll();
-                for(int i = 0;i<userRealms.size();i++){
-                    Log.d("picher","pos:"+i+"name"+userRealms.get(i).getName());
-                }*/
+                //简单插入
+                insertDemo1();
             }
         });
 
         searchBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //userDao.queryForAll();
-                Flowable.just("1").subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
-                        .subscribe(new Consumer<String>() {
-                            @Override
-                            public void accept(String s) throws Exception {
-                                Log.d("picher","RXjieshou");
-                            }
-                        });
-                userDao.queryAll().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
-                       .map(new Function<List<UserRoom>, String>() {
-                           @Override
-                           public String apply(List<UserRoom> userRooms) throws Exception {
-                               return userRooms.size() + "";
-                           }
-                       }).subscribe(new Consumer<String>() {
-                    @Override
-                    public void accept(String s) throws Exception {
-                        Log.d("picher","数据库数："+s);
-                    }
-                });
+                //简餐查询
+                searchDemo1();
             }
         });
+
+    }
+
+    private void searchDemo1() {
+        UserGreenDao dao = GreenDaoManager.daoSession.getUserGreenDao();
+        // 查询所有
+        List<UserGreen> userGreenDaoDaos = dao.loadAll();
+        Log.d("picher","GreenDao查询所有：" + new Gson().toJson(userGreenDaoDaos));
+        // 单一条件查询
+        UserGreen user = dao.queryBuilder().where(UserGreenDao.Properties.Name.eq("picher")).limit(1).unique();
+        Log.d("picher","单一条件查询：" + new Gson().toJson(user));
+        // 模糊查询
+        UserGreen userLike = dao.queryBuilder().where(UserGreenDao.Properties.Name.like("pi%")).limit(1).unique();
+        Log.d("picher","模糊查询：" + new Gson().toJson(userLike));
+        // SQL 语句查询
+        List<UserGreen> userGreens = dao.queryRaw(" where name = ?", "%ich%");
+        Log.d("picher","语句查询：" + new Gson().toJson(userGreens));
+    }
+
+    private void insertDemo1() {
+        UserGreen userGreen = new UserGreen("picher",new Date(System.currentTimeMillis()),18);
+        GreenDaoManager.daoSession.getUserGreenDao().insert(userGreen);
     }
 
     @Override
