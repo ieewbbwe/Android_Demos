@@ -29,6 +29,7 @@ import com.webber.demos.four.FourComponentActivity;
 import com.webber.demos.four.shareanim.ShareAnimActivity;
 import com.webber.demos.fragmentdemo.FragmentDemoActivity;
 import com.webber.demos.google.AdvertiseActivity;
+import com.webber.demos.google.GoogleDemoActivity;
 import com.webber.demos.media.MediaDemoActivity;
 import com.webber.demos.mvvm.DataBindingActivity;
 import com.webber.demos.nest.ViewPagerFragmentActivity;
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
             new DemoInfo("广告权限", "Google 库权限--广告", AdvertiseActivity.class),
             new DemoInfo("锐化、活化问题", "ViewPager 嵌套fragment嵌套ViewPager 的问题", SaveAndRestoreDemoActivity.class),
             new DemoInfo("View学习", "Android控件、自定义控件", ViewDemoActivity.class),
+            new DemoInfo("Google全家桶", "语音、支付", GoogleDemoActivity.class),
             new DemoInfo("工具类测试", "虚拟键显示状态", UtilsDemoActivity.class),
             new DemoInfo("获取设备信息", "getSystemInfo", SystemInfoDemoActivity.class),
             new DemoInfo("MediaPlayer", "多媒體資源專題", MediaDemoActivity.class),

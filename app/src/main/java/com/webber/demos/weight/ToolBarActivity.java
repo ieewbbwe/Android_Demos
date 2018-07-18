@@ -10,13 +10,17 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
@@ -36,16 +40,21 @@ public class ToolBarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tool_bar);
-        init();
+        mAppBar = (AppBarLayout) findViewById(R.id.appbar);
+        mToolBar = (Toolbar) findViewById(R.id.toolbar);
+        //mTabL = (TabLayout) findViewById(R.id.m_tab_tl);
+        //init();
+        // 自定義ToolBar 佈局
+        customerToolBar();
+    }
 
+    private void customerToolBar() {
+        setSupportActionBar(mToolBar);
+       //getSupportActionBar().setCustomView(R.layout.tool_bar_customer_layout);
+        //mToolBar.setContentInsetsAbsolute(0,0);
     }
 
     private void init() {
-        mAppBar = (AppBarLayout) findViewById(R.id.appbar);
-        mToolBar = (Toolbar) findViewById(R.id.toolbar);
-        //mBorderEt = (EditText) findViewById(R.id.edtEmail);
-        mTabL = (TabLayout) findViewById(R.id.m_tab_l);
-
         mTabL.addTab(mTabL.newTab().setText("11"));
         mTabL.addTab(mTabL.newTab().setText("222"));
 
@@ -63,18 +72,21 @@ public class ToolBarActivity extends AppCompatActivity {
         mAutoTv.setAdapter(arrayAdapter);*/
 
         setSupportActionBar(mToolBar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ViewGroup customView = (ViewGroup) LayoutInflater.from(this).inflate(R.layout.searchview, null);
+        ActionBar.LayoutParams lp =new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT,
+                ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
+        getSupportActionBar().setCustomView(customView, lp);
         setTextBorder();
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main, menu);
-        setSupportMenu(menu);
+        //inflater.inflate(R.menu.main, menu);
+        //setSupportMenu(menu);
         return true;
-    }
+    }*/
 
     private void setSupportMenu(Menu menu) {
         mSearchMe = menu.findItem(R.id.menu_search);

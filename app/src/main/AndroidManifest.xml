@@ -169,7 +169,10 @@
         </activity>
         <activity android:name=".four.shareanim.ShareAnimActivity" />
         <activity android:name=".four.shareanim.EntryAnimActivity" />
-        <activity android:name=".four.shareanim.ShareElementActivity"></activity>
+        <activity android:name=".four.shareanim.ShareElementActivity" />
+        <activity android:name=".google.GoogleDemoActivity" />
+        <activity android:name=".view.dialog.DialogDemoActivity" />
+        <activity android:name=".view.TabLayoutActivity"></activity>
     </application>
 
 </manifest>

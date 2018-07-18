@@ -41,7 +41,6 @@ public class ExampleActivity extends AppCompatActivity {
         mExampleRlv = findViewById(R.id.m_example_rlv);
 
         setSupportActionBar(mToolbar);
-
         ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this,mDrawableDl,mToolbar,R.string.app_name,R.string.label_name);
         drawerToggle.syncState();
         mDrawableDl.addDrawerListener(drawerToggle);

@@ -16,12 +16,15 @@ import com.webber.demos.customerview.CustomerViewActivity
 import com.webber.demos.four.FourComponentActivity
 import com.webber.demos.fragmentdemo.FragmentDemoActivity
 import com.webber.demos.nest.ViewPagerFragmentActivity
+import com.webber.demos.view.dialog.DialogDemoActivity
 import com.webber.demos.weight.*
 import kotlinx.android.synthetic.main.activity_view_demo.*
 
 class ViewDemoActivity : AppCompatActivity() {
 
     var DEMOS : Array<DemoInfo> = arrayOf(
+            DemoInfo("Dialog", "彈出框專場", DialogDemoActivity::class.java),
+            DemoInfo("TabLayout", "TabLayout学习", TabLayoutActivity::class.java),
             DemoInfo("BottomSheet底部弹出框", "BottomSheet", BottomSheetActivity::class.java),
             DemoInfo("列表相关", "RecycleView的坑", RecyclerViewActivity::class.java),
             DemoInfo("新布局Demo", "Constraint学习", ConstraintLayoutActivity::class.java),
