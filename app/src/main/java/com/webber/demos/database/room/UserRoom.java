@@ -1,6 +1,7 @@
 package com.webber.demos.database.room;
 
 import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Embedded;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
@@ -16,12 +17,32 @@ public class UserRoom {
 
     @PrimaryKey(autoGenerate = true)
     private int uid;
-    @ColumnInfo
+    @ColumnInfo(name = "name")
     private String name;
     @ColumnInfo
     private int age;
     @ColumnInfo
     private Date birthday;
+    @Embedded(prefix = "add1")
+    EmbedObject obj;
+    @ColumnInfo
+    private String addnew;
+
+    public String getAddnew() {
+        return addnew;
+    }
+
+    public void setAddnew(String addnew) {
+        this.addnew = addnew;
+    }
+
+    public EmbedObject getObj() {
+        return obj;
+    }
+
+    public void setObj(EmbedObject obj) {
+        this.obj = obj;
+    }
 
     @Ignore
     public UserRoom(String name, int age, Date birthday) {

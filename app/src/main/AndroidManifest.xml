@@ -120,7 +120,7 @@
             android:value="2.1" />
 
         <activity android:name=".weight.ToolBarDemoActivity" />
-        <activity android:name=".example.ExampleActivity" />
+        <activity android:name=".example.ExampleActivity" android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".bugtest.SaveAndRestoreDemoActivity" />
         <activity android:name=".sys.SystemInfoDemoActivity" />
         <activity android:name=".weight.CoordinatorFloatActivity" />
