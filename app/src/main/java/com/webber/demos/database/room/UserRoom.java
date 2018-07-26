@@ -5,6 +5,7 @@ import android.arch.persistence.room.Embedded;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
+import android.content.Intent;
 
 import java.util.Date;
 
@@ -23,17 +24,27 @@ public class UserRoom {
     private int age;
     @ColumnInfo
     private Date birthday;
-    @Embedded(prefix = "add1")
+    @Embedded(prefix = "add1_")
     EmbedObject obj;
     @ColumnInfo
-    private String addnew;
+    private String addString1;
+    @ColumnInfo
+    private Integer addInt;
 
-    public String getAddnew() {
-        return addnew;
+    public Integer getAddInt() {
+        return addInt;
     }
 
-    public void setAddnew(String addnew) {
-        this.addnew = addnew;
+    public void setAddInt(Integer addInt) {
+        this.addInt = addInt;
+    }
+
+    public String getAddString1() {
+        return addString1;
+    }
+
+    public void setAddString1(String addString1) {
+        this.addString1 = addString1;
     }
 
     public EmbedObject getObj() {
