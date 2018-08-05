@@ -23,6 +23,8 @@ import kotlinx.android.synthetic.main.activity_view_demo.*
 class ViewDemoActivity : AppCompatActivity() {
 
     var DEMOS : Array<DemoInfo> = arrayOf(
+            DemoInfo("Marquee", "List中跑马灯效果实现", ListMarqueeActivity::class.java),
+            DemoInfo("Marquee Draw", "自定义跑马灯，draw", CustomerMarqueeActivity::class.java),
             DemoInfo("Dialog", "彈出框專場", DialogDemoActivity::class.java),
             DemoInfo("TabLayout", "TabLayout学习", TabLayoutActivity::class.java),
             DemoInfo("BottomSheet底部弹出框", "BottomSheet", BottomSheetActivity::class.java),

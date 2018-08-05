@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.webber.demos.view.MarqueeTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/breaking_news_title"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="left|center_vertical"
+    android:textColor="@android:color/black"
+    android:text="|||hello world my dear friend this is a long long string~~~~hello world my dear friend this is a long long string|||"
+    android:ellipsize="marquee"
+    android:singleLine="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:marqueeRepeatLimit="0"
+    android:textStyle="bold" />

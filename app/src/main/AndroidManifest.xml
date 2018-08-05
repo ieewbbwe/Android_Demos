@@ -120,7 +120,9 @@
             android:value="2.1" />
 
         <activity android:name=".weight.ToolBarDemoActivity" />
-        <activity android:name=".example.ExampleActivity" android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".example.ExampleActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".bugtest.SaveAndRestoreDemoActivity" />
         <activity android:name=".sys.SystemInfoDemoActivity" />
         <activity android:name=".weight.CoordinatorFloatActivity" />
@@ -172,7 +174,9 @@
         <activity android:name=".four.shareanim.ShareElementActivity" />
         <activity android:name=".google.GoogleDemoActivity" />
         <activity android:name=".view.dialog.DialogDemoActivity" />
-        <activity android:name=".view.TabLayoutActivity"></activity>
+        <activity android:name=".view.TabLayoutActivity" />
+        <activity android:name=".view.ListMarqueeActivity"/>
+        <activity android:name=".view.CustomerMarqueeActivity"/>
     </application>
 
 </manifest>

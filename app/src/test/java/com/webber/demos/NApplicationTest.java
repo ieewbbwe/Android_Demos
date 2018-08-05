@@ -1,5 +1,7 @@
 package com.webber.demos;
 
+import android.text.TextUtils;
+
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -30,6 +32,16 @@ public class NApplicationTest {
         testObjs.add(testObj);
         System.out.print("Contains:"+ testObjs.contains(testObj));
 
+    }
+
+    @Test
+    public void equals(){
+        String a = "aaa";
+        String b = a;
+        b = "bbb";
+        System.out.println("a:"+a + "b:"+b);
+        System.out.println("a:"+a.toString().hashCode() + "b:"+b.toString().hashCode());
+        System.out.println("a==b:" + (a==b));
     }
 
     public class TestObj{
