@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -14,12 +15,11 @@ import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
-import android.widget.RelativeLayout;
+
+import com.webber.demos.R;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
@@ -28,19 +28,26 @@ import io.reactivex.functions.Consumer;
 
 /**
  * Created by picher on 2018/8/2.
- * Describe：
+ * Describe：Scrolling TextView
  */
 
 public class CustomerTextView extends AppCompatTextView {
 
+    // 切换下一条之前的停顿时间
+    private static final int DEFAULT_PAUSE_TIME = 2000;
+    // 默认一条滑动时间
+    private static final int DEFAULT_SCROLL_TIME = 6000;
+
     private ArrayList<String> mContentList = new ArrayList<>();
 
+    // 布局尺寸
     private int viewWidth;
     private int viewHeight;
     private int paddingLeft;
     private int paddingTop;
     private int paddingRight;
     private int paddingBottom;
+    // 文字属性
     private Paint contentPaint;
     private int contentColor = Color.BLACK;
     private int contentTextSize = 50;
@@ -51,13 +58,14 @@ public class CustomerTextView extends AppCompatTextView {
     private String mNextString;
     private float mCurrentX = 0;
     private float mCurrentY = 0;
-    private String singleText = "单行文本信息！";
     private int currentStringWidth;
     private int currentStringHeight;
-    private float mXOffset;
+    // 控制开关
     private boolean isScrollNext = false;
     private boolean isScrollNow = false;
     private int screenIndex;
+    private int mSwitchDuration;
+    private int mNextPauseDuration;
 
     public CustomerTextView(Context context) {
         this(context, null);
@@ -69,6 +77,9 @@ public class CustomerTextView extends AppCompatTextView {
 
     public CustomerTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        TypedArray array = getContext().obtainStyledAttributes(attrs, R.styleable.CustomerTextView);
+        mNextPauseDuration = array.getInt(R.styleable.CustomerTextView_next_pause_duration, DEFAULT_PAUSE_TIME);
+        mSwitchDuration = array.getInt(R.styleable.CustomerTextView_switch_item_duration, DEFAULT_SCROLL_TIME);
         init();
     }
 
@@ -108,14 +119,9 @@ public class CustomerTextView extends AppCompatTextView {
                 contentPaint.getTextBounds(contentString, 0, contentString.length(), contentBound);
                 int tempWidth = contentBound.width();
                 int tempHeight = contentBound.height();
-                maxContentHeight = Math.max(maxContentHeight, tempHeight);
-                maxContentWidth = Math.max(maxContentWidth, tempWidth);
+                maxContentHeight = Math.max(viewHeight, tempHeight);
+                maxContentWidth = Math.max(viewWidth, tempWidth);
             }
-        } else {
-            Rect contentBound = new Rect();
-            contentPaint.getTextBounds(singleText, 0, singleText.length(), contentBound);
-            maxContentWidth = contentBound.width();
-            maxContentHeight = contentBound.height();
         }
 
         if (widthMode == MeasureSpec.EXACTLY && heightMode == MeasureSpec.EXACTLY) {
@@ -135,13 +141,11 @@ public class CustomerTextView extends AppCompatTextView {
         super.onLayout(changed, left, top, right, bottom);
     }
 
-    // 画两条文本
-    // 若当前文本长度超过一个屏幕则滚动完成
-    // 切换下一条
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (mContentList.size() > 1) {
+            // 循环滚动
             if (mCurrentIndex >= mContentList.size()) {
                 mCurrentIndex = 0;
             }
@@ -151,27 +155,27 @@ public class CustomerTextView extends AppCompatTextView {
             // 计算绘制区域
             currentStringWidth = calcStringSize(mCurrentString).width();
             currentStringHeight = calcStringSize(mCurrentString).height();
-            ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) getLayoutParams();
-            mCurrentY = currentStringHeight + layoutParams.topMargin;
-            //mCurrentX = layoutParams.leftMargin;
+            if (getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+                ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) getLayoutParams();
+                mCurrentY = currentStringHeight + layoutParams.topMargin + paddingTop;
+                //mCurrentX += paddingLeft; // 停止post后还会回掉一次 导致计算错误
+            }
 
             screenIndex = currentStringWidth / viewWidth + 1;
-            //mXOffset = currentStringWidth - viewWidth;
-            if(screenIndex > 1){
-                // 超过一屏则滚动当前直到末尾 然后切换下一条新闻
-                 if(!isScrollNow){
-                     startScrollNow();
-                 }
-            }else{
+            if (screenIndex > 1) {
+                // 超过一屏则滚动到末尾 然后切换下一条新闻
+                if (!isScrollNow) {
+                    startScrollNow();
+                }
+            } else {
                 // 切换下一条新闻
-                if(!isScrollNext){
+                if (!isScrollNext) {
                     startScrollNext();
                 }
             }
 
             canvas.drawText(mCurrentString, mCurrentX, mCurrentY, contentPaint);
             canvas.drawText(mNextString, mCurrentX + screenIndex * viewWidth, mCurrentY, contentPaint);
-
         }
     }
 
@@ -180,24 +184,23 @@ public class CustomerTextView extends AppCompatTextView {
      */
     private void startScrollNow() {
         isScrollNow = true;
-        horizontalScroll(0,(screenIndex - 1) * viewWidth, new LinearInterpolator(),new AnimatorListenerAdapter() {
+        horizontalScroll(0, (screenIndex - 1) * viewWidth, new LinearInterpolator(), new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
                 // 滚动完成后 停顿2秒 切换下一条
-                delay(2000, new Consumer<Long>() {
+                delay(mNextPauseDuration, new Consumer<Long>() {
                     @Override
                     public void accept(Long aLong) throws Exception {
-                        horizontalScroll((screenIndex - 1) * viewWidth,screenIndex * viewWidth, new AccelerateDecelerateInterpolator(), new AnimatorListenerAdapter() {
+                        horizontalScroll((screenIndex - 1) * viewWidth, screenIndex * viewWidth, new AccelerateDecelerateInterpolator(), new AnimatorListenerAdapter() {
                             @Override
                             public void onAnimationEnd(Animator animation) {
                                 super.onAnimationEnd(animation);
-                                delay(5000, new Consumer<Long>() {
+                                delay(mNextPauseDuration, new Consumer<Long>() {
                                     @Override
                                     public void accept(Long aLong) throws Exception {
                                         isScrollNow = false;
-                                        mCurrentIndex ++;
-                                        startScrollNext();
+                                        nextRefresh();
                                     }
                                 });
                             }
@@ -209,68 +212,67 @@ public class CustomerTextView extends AppCompatTextView {
 
     }
 
-    private void delay(int ms, Consumer<Long> consumer) {
-        Observable.timer(ms, TimeUnit.MICROSECONDS)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(consumer);
-        //Timer timer = new Timer();
-        //timer.schedule(task, ms);
-    }
-
-    private void horizontalScroll(int start, int end, TimeInterpolator interpolator, AnimatorListenerAdapter animatorListenerAdapter) {
-        ValueAnimator animator = ValueAnimator.ofFloat(start, end);
-        animator.setDuration(5000);
-        animator.setInterpolator(interpolator);
-        animator.start();
-        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                float value = (float) animation.getAnimatedValue();
-                mCurrentX = -value;
-                postInvalidate();
-            }
-        });
-        animator.addListener(animatorListenerAdapter);
-    }
-
     /**
      * 切换到下一个
      */
     public void startScrollNext() {
         isScrollNext = true;
         ValueAnimator animator = ValueAnimator.ofFloat(0, viewWidth);
-        animator.setDuration(5000);
+        animator.setDuration(mSwitchDuration);
         animator.setInterpolator(new AccelerateDecelerateInterpolator());// 先快后慢
         animator.start();
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 float value = (float) animation.getAnimatedValue();
-                mCurrentX = -value;
+                mCurrentX = -value + paddingLeft;
                 postInvalidate();
             }
         });
 
         animator.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationStart(Animator animation) {
-                super.onAnimationStart(animation);
-            }
 
             @Override
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
                 // 停顿2s 后切换下一条
-              delay(2000, new Consumer<Long>() {
-                  @Override
-                  public void accept(Long aLong) throws Exception {
-                      isScrollNext = false;
-                      mCurrentIndex ++;
-                      startScrollNext();
-                  }
-              });
+                delay(mNextPauseDuration, new Consumer<Long>() {
+                    @Override
+                    public void accept(Long aLong) throws Exception {
+                        isScrollNext = false;
+                        nextRefresh();
+                    }
+                });
             }
         });
+    }
+
+    private void delay(int ms, Consumer<Long> consumer) {
+        Observable.timer(ms, TimeUnit.MILLISECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(consumer);
+    }
+
+    private void horizontalScroll(int start, int end, TimeInterpolator interpolator, AnimatorListenerAdapter animatorListenerAdapter) {
+        ValueAnimator animator = ValueAnimator.ofFloat(start, end);
+        animator.setDuration(mSwitchDuration);
+        animator.setInterpolator(interpolator);
+        animator.start();
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float value = (float) animation.getAnimatedValue();
+                mCurrentX = -value + paddingLeft;
+                postInvalidate();
+            }
+        });
+        animator.addListener(animatorListenerAdapter);
+    }
+
+    private void nextRefresh() {
+        mCurrentIndex++;
+        mCurrentX = paddingLeft;
+        postInvalidate();
     }
 
     private Rect calcStringSize(String str) {

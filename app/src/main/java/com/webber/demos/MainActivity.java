@@ -55,6 +55,10 @@ import com.webber.demos.weight.ToolBarActivity;
 import com.webber.demos.weight.ToolBarDemoActivity;
 
 import java.util.Locale;
+import java.util.concurrent.TimeUnit;
+
+import io.reactivex.Observable;
+import io.reactivex.functions.Consumer;
 
 public class MainActivity extends AppCompatActivity {
 

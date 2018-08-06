@@ -6,6 +6,12 @@
 
     <com.webber.demos.view.CustomerTextView
         android:id="@+id/m_customer"
+        android:padding="8dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:text="实际内容"
+        android:textSize="24sp"
+        android:background="#0094ff"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
+
 </android.support.constraint.ConstraintLayout>
